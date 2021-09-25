@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalysSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SerializeHierarhy>
+    <Amount>0</Amount>
+    <Name>Проект 2</Name>
+    <children>
+      <SerializeHierarhy>
+        <Amount>0</Amount>
+        <Name>1</Name>
+        <children />
+      </SerializeHierarhy>
+    </children>
+  </SerializeHierarhy>
+  <StartRisk>70</StartRisk>
+  <FinishRisk>100</FinishRisk>
+  <AnalysParams>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+  </AnalysParams>
+  <AnalysGraphics>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>false</boolean>
+  </AnalysGraphics>
+</AnalysSettings>

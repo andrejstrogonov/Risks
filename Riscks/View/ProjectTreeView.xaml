@@ -1,0 +1,181 @@
+﻿<UserControl x:Class="Riscks.View.ProjectTreeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel ="clr-namespace:Riscks.ViewModel"
+             xmlns:local="clr-namespace:Riscks.View"
+             xmlns:Resources="clr-namespace:Riscks.Resources"
+             mc:Ignorable="d" 
+             xmlns:gl="clr-namespace:System.Globalization;assembly=mscorlib"
+             HorizontalAlignment="Stretch" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border  CornerRadius="3" BorderThickness="1" BorderBrush="#E6E2E7" Background="#FFFFFF" Grid.Row="0">
+            <ScrollViewer Padding="42 14 0 14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <TreeView HorizontalAlignment="Stretch" VerticalAlignment="Top" x:Name="DirectoryTreeView"  ItemsSource="{Binding DirectoryTree.NodesTree, UpdateSourceTrigger=PropertyChanged}" TreeViewItem.Selected="DirectoryTreeView_Selected" SelectedItemChanged="DirectoryTreeView_SelectedItemChanged" SelectedValuePath="{Binding CurrentNode, UpdateSourceTrigger=PropertyChanged}" ItemContainerStyle="{StaticResource TreeViewItem_Project}" Style="{StaticResource TreeView_Project}" >
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Nodes}">
+                            <Label Style="{StaticResource LabelStyle_15}" Content="{Binding Name}"/>                            
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </ScrollViewer>
+        </Border>
+        <Border Margin="16 2 16 0" Background="Transparent" Grid.Row="1">
+        <TabControl SelectedIndex="{Binding SelectedLevel}" x:Name="tabControl"  Style="{StaticResource TabControlStyle1}">
+            <TabItem>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Template="{StaticResource ProjectButton_First}" Command="{Binding CreateSectionCommand}" ContentStringFormat="Добавить раздел"/>
+                    <Button Grid.Column="1" Template="{StaticResource ProjectButton_Last_Gray}"  Command="{Binding CreateSessionCommand}" ContentStringFormat="Добавить расчет"/>
+                </Grid>
+            </TabItem>
+                <TabItem>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Template="{StaticResource ProjectButton_First}"  Command="{Binding CreateSessionCommand}" ContentStringFormat="Добавить расчет"/>
+                        <Button Grid.Column="1" Template="{StaticResource ProjectButton_Last_Red}"  Command="{Binding DeleteSessionCommand}" ContentStringFormat="Удалить раздел"/>
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Template="{StaticResource ProjectButton_First}"  Command="{Binding SaveAsSessionCommand}" ContentStringFormat="Копировать расчет"/>
+                        <Button Grid.Column="1" Template="{StaticResource ProjectButton_Last_Red}" Command="{Binding DeleteSessionCommand}" ContentStringFormat="Удалить расчет"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        </Border>
+        <Border Height="141" Margin="16 2 16 0" Background="Transparent"  Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Margin="0 0 0 2" Height="26" Background="#CBC1CE" HorizontalAlignment="Left" Width="80" Grid.Row="0" CornerRadius="4 4 0 0">
+                    <Label  Style="{StaticResource LabelStyle_15}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#141414" Background="Transparent" Content="Свойства"/>
+                </Border>
+                
+                <Border Grid.Row="1">
+                    <TabControl SelectedIndex="{Binding SelectedLevel}" Background="Transparent" Style="{StaticResource TabControlStyle1}">
+                        <TabItem Visibility="Hidden" Background="Transparent">
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="0 0 2 2" Grid.Column="0" Grid.Row="0"  Style="{StaticResource PropertyHeader}" Text="Название"></TextBlock>
+                                <TextBox VerticalAlignment="Top" Margin="0 0 0 2" Grid.Column="1" Grid.Row="0"  Style="{StaticResource PropertyValue_Single}" Text="{Binding CurrentNode.Property.Name, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, UpdateSourceTrigger=LostFocus}"/>
+                                <TextBlock VerticalAlignment="Top" Margin="0 0 2 0" Grid.Row="1" Grid.Column="0" Style="{StaticResource PropertyHeader}" Text="Период"></TextBlock>
+                                
+                                <Border Grid.Column="1" Grid.Row="1" Height="Auto" Margin="0 0 0 0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Margin="0 0 2 0" Grid.Column="0" Style="{StaticResource PropertyValue_Single}" Text="{Binding CurrentNode.Property.Period,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <ComboBox Grid.Column="1" Style="{StaticResource ComboBoxStyle_Property_2}" ItemsSource="{Binding CurrentNode.Property.PeriodUnits}" SelectedItem="{Binding CurrentNode.Property.PeriodUnit, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                    </Grid>
+                                 </Border>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Visibility="Hidden" Background="Transparent">
+                            <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="0 0 2 2" Grid.Column="0" Grid.Row="0" Style="{StaticResource PropertyHeader}" Text="Название"></TextBlock>
+
+                                <TextBox Margin="0 0 0 2" Grid.Column="1" Grid.Row="0" Style="{StaticResource PropertyValue_Single}" Text="{Binding CurrentNode.Property.Name,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, UpdateSourceTrigger=LostFocus}"/>
+                                <TextBlock Margin="0 0 2 0" Grid.Column="0" Grid.Row="1"  Style="{StaticResource PropertyHeader}" Text="Период"></TextBlock>
+                                <Border Grid.Column="1" Grid.Row="1" Height="26" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Margin="0 0 2 0" Grid.Column="0" Style="{StaticResource PropertyValue_Single}" Text="{Binding CurrentNode.Property.Period,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <ComboBox Grid.Column="1" Style="{StaticResource ComboBoxStyle_Property_2}" ItemsSource="{Binding CurrentNode.Property.PeriodUnits}" SelectedItem="{Binding CurrentNode.Property.PeriodUnit, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </TabItem>
+                        <TabItem>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="0 0 2 2" Grid.Column="0" Grid.Row="0" Style="{StaticResource PropertyHeader}" Text="Название"></TextBlock>
+
+                                <TextBox  Margin="0 0 0 2" Grid.Column="1" Grid.Row="0"  Style="{StaticResource PropertyValue_Single}" Text="{Binding CurrentNode.Property.Name,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, UpdateSourceTrigger=LostFocus}"/>
+                                <TextBlock Margin="0 0 2 2" Grid.Column="0" Grid.Row="1" Style="{StaticResource PropertyHeader}" Text="Период"></TextBlock>
+                                
+                                <Border Margin="0 0 0 2" Grid.Column="1" Grid.Row="1" Height="Auto" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Grid.Column="0" Margin="0 0 2 0" Style="{StaticResource PropertyValue_Single}" Text="{Binding CurrentNode.Property.Period, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <ComboBox  Grid.Column="1" Style="{StaticResource ComboBoxStyle_Property_2}" ItemsSource="{Binding CurrentNode.Property.PeriodUnits}" SelectedItem="{Binding CurrentNode.Property.PeriodUnit, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                    </Grid>
+                                </Border>
+                                <TextBlock Margin="0 0 2 2" Grid.Column="0" Grid.Row="2" Style="{StaticResource PropertyHeader}" Text="Бюджет"></TextBlock>
+
+                                <Border Margin="0 0 0 2" Grid.Column="1" Grid.Row="2" Height="Auto" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Grid.Column="0" Margin="0 0 2 0" Style="{StaticResource PropertyValue_Single}" Text="{Binding CurrentNode.Property.Budget,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, UpdateSourceTrigger=LostFocus}"/>
+                                        <ComboBox  Grid.Column="1" Style="{StaticResource ComboBoxStyle_Property_2}" ItemsSource="{Binding CurrentNode.Property.BudgetUnits}" SelectedItem="{Binding CurrentNode.Property.BudgetUnit, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Grid>
+                                </Border>
+                                <TextBlock Margin="0 0 2 2" Grid.Column="0" Grid.Row="3" Style="{StaticResource PropertyHeader}" Text="Налогообложение"></TextBlock>
+                                
+                                <ComboBox Margin="0 0 0 2" BorderThickness="1" Grid.Column="1" Grid.Row="3" Style="{StaticResource ComboBoxStyle_Property_2}" ItemsSource="{Binding CurrentNode.Property.VAT_Types}" SelectedItem="{Binding CurrentNode.Property.VAT_Type, UpdateSourceTrigger=PropertyChanged}"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem></TabItem>
+                    </TabControl>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

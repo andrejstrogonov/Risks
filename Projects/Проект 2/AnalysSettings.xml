@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalysSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <StartRisk>70</StartRisk>
+  <FinishRisk>100</FinishRisk>
+  <AnalysParams>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+  </AnalysParams>
+  <AnalysGraphics>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>false</boolean>
+  </AnalysGraphics>
+</AnalysSettings>

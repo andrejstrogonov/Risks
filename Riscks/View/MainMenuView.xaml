@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Riscks.View.MainMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModels="clr-namespace:Riscks.ViewModel"
+             xmlns:Templates="clr-namespace:Riscks.View"
+             xmlns:Resources="clr-namespace:Riscks.Resources"
+             xmlns:local="clr-namespace:Riscks.View"
+             mc:Ignorable="d" Style="{StaticResource CommonFontForUserControl}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resources/StylesResources.xaml"/>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <ViewModels:MenuViewModel/>
+    </UserControl.DataContext>
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="130*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+              </Grid.Resources>
+        <Button Padding="17 0" Margin="0 0 0 0" IsEnabled="{Binding IsEnabled}"  DataContext="{Binding Menu, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0" Style="{StaticResource ButtonMenu_gray}" ContentStringFormat="МЕНЮ" Command="{Binding SelectMenuItemCommand}" />
+        <Button Padding="9 0" Margin="0 0 0 0" IsEnabled="{Binding IsEnabled}" DataContext="{Binding Products, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Style="{StaticResource ButtonMenu_green}"  ContentStringFormat="ТОВАРЫ И УСЛУГИ" Command="{Binding SelectMenuItemCommand}"  >
+        </Button>
+
+        <Button Padding="9 0" Margin="0 0 0 0" IsEnabled="{Binding IsEnabled}" DataContext="{Binding Resources, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ButtonMenu_green}"  ContentStringFormat="РЕСУРСЫ" Grid.Column="2" Command="{Binding SelectMenuItemCommand}"  >
+        </Button>
+
+        <Button Padding="8 0" Margin="0 0 0 0" IsEnabled="{Binding IsEnabled}" DataContext="{Binding FixedCosts, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ButtonMenu_green}" ContentStringFormat="ДОП. ДОХОДЫ И РАСХОДЫ"  Grid.Column="3" Command="{Binding SelectMenuItemCommand}"  >
+        </Button>
+
+        <Button Padding="8 0" Margin="0 0 0 0" IsEnabled="{Binding IsEnabled}" DataContext="{Binding Analys}" Style="{StaticResource ButtonMenu_violet}" x:Name="AnalysButton" Grid.Column="4" ContentStringFormat="АНАЛИЗ" Command="{Binding SelectMenuItemCommand}" >
+        </Button>
+
+        <Button Padding="8 0" Margin="0 0 0 0" IsEnabled="{Binding IsEnabled}" DataContext="{Binding Flex}" Style="{StaticResource ButtonMenu_violet}"  x:Name="FlexButton" ContentStringFormat="ЭЛАСТИЧНОСТЬ" Grid.Column="5" Command="{Binding SelectMenuItemCommand}" >
+        </Button>
+
+        <Button Padding="9 0" Margin="0 0 0 0" IsEnabled="{Binding IsEnabled}" DataContext="{Binding PDF}" Style="{StaticResource ButtonMenu_red}"  ContentStringFormat="PDF ОТЧЕТ" Grid.Column="6" Command="{Binding SelectMenuItemCommand}" >
+        </Button>
+    </Grid>
+</UserControl>

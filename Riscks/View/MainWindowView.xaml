@@ -1,0 +1,435 @@
+﻿<Window x:Class="Riscks.View.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Riscks.View"
+        xmlns:resources="clr-namespace:Riscks.Resources"
+        xmlns:converters="clr-namespace:Riscks.Converters"
+        xmlns:View="clr-namespace:Riscks.View"
+        xmlns:ViewModel="clr-namespace:Riscks.ViewModel"
+        xmlns:slider="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="ITSimplex" Icon="/ImageResources/logo_small.png" Loaded="Window_Loaded" Closing="Window_Closing" Left="0" Top="0" WindowStyle="None"  VisualBitmapScalingMode="HighQuality" WindowState="Normal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   ResizeMode="NoResize">
+    <Window.Resources>
+        <converters:Width30Converter x:Key="width30"/>
+    </Window.Resources>
+    <Window.Template>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border Width="Auto" Height="Auto" Name="windowFrame"    
+          BorderBrush="#5a515d"
+          Background="#E6E2E7" 
+          BorderThickness="0" >
+                        
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                    <Border  BorderBrush="#5a515d" BorderThickness="0 0 0 0"   Background="#E6E2E7" Grid.Row="0">
+                        <Grid Background="Transparent" VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="0.1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Width="36" Height="28" VerticalAlignment="Stretch" Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Background="White">
+                                <Border Background="#E7E2E8" BorderThickness="0 1 0 0" BorderBrush="#E2DAE0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="3"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="3"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Border BorderThickness="0 0 1 0" BorderBrush="#FAF6FC" Grid.Row="0" Grid.ColumnSpan="2">
+                                            <Border BorderThickness="0 1 0 1" BorderBrush="#E9E7ED" >
+                                        <Image  Margin="6 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="/ImageResources/logo_small.png"></Image>
+                                        </Border>
+                                        </Border>
+                                        <Border Grid.Row="1" Grid.Column="0" BorderBrush="#BAB4B2" BorderThickness="0 1 0 1" Background="#AAA6A6"></Border>
+                                        <Path Grid.Column="1" Grid.Row="1" Data="M-0.5,0.5 L2.5,0.5 L-0.5,3" StrokeThickness="1" Fill="#AAA6A6" Stroke="#BAB4B2"/>
+                                    
+                                    </Grid>
+                                    </Border>
+                                
+                            </Grid>
+                            <View:MainMenuView Grid.Column="1" VerticalAlignment="Stretch" x:Name="Menu" HorizontalAlignment="Stretch"/>
+
+                            <Border Background="#5A515D" Margin="0 0 0 1" BorderThickness="0 0 0 1" BorderBrush="#F9F6FA" Grid.Column="2">
+                            <Border BorderThickness="0 0 0 1" BorderBrush="#B9B3BA" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                   
+                                    <Button Width="28"  HorizontalAlignment="Right"  VerticalAlignment="Stretch" Grid.Column="1" Background="Transparent" Click="Button_Click_2">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Border Padding="0 0 0 7" CornerRadius="0 0 0 0" x:Name="bd" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                                        <Path Height="12" Width="14" Stretch="UniformToFill" StrokeThickness="1.5" Stroke="#CDCBCE"  Data="M0,15 L15,15" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+                                                </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="bd" Property="Background" Value="#aa86778C"/>
+                                                            <Setter TargetName="bd" Property="BorderBrush" Value="#aa695B6E"/>
+                                                        </Trigger>
+                                                        <Trigger Property="Button.IsPressed" Value="True">
+                                                            <Setter TargetName="bd" Property="Background" Value="#86778C"/>
+                                                            <Setter TargetName="bd" Property="BorderBrush" Value="#FF695B6E"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button Width="28" VerticalAlignment="Stretch" HorizontalAlignment="Right" Grid.Column="2" Background="Transparent" Click="Button_Click_1">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                    <Border x:Name="bd" BorderThickness="1" BorderBrush="Transparent">
+                                                    <Path Width="12" Height="12" StrokeThickness="1.5" Stretch="Fill" Stroke="#CDCBCE" Data="M0,0 L15,15 M0,15 L15,0"/>
+                                                    </Border>
+                                                        <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="bd" Property="Background" Value="#aaDC5E5F"/>
+                                                            <Setter TargetName="bd" Property="BorderBrush" Value="#aaBB5354"/>
+                                                        </Trigger>
+                                                        <Trigger Property="Button.IsPressed" Value="True">
+                                                            <Setter TargetName="bd" Property="Background" Value="#DC5E5F"/>
+                                                            <Setter TargetName="bd" Property="BorderBrush" Value="#BB5354"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                            
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+                            </Border>
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                       <Border Background="Transparent" Grid.Row="1">
+                                
+
+                                <AdornerDecorator>
+                                    <ContentPresenter/>
+                                </AdornerDecorator>
+
+                            </Border>
+
+                            <ContentPresenter Grid.Row="2" Margin="0" 
+                                HorizontalAlignment="Center"
+                                Content="{TemplateBinding Tag}"></ContentPresenter>
+                            <!--<TextBlock HorizontalAlignment="Center" Grid.Row="2" Text="{TemplateBinding Tag}" Margin="1,10,1,1" Padding="5"></TextBlock>-->
+                            <ResizeGrip Name="WindowResizeGrip" Grid.Row="2" Margin="0,0,10,7"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Bottom"
+                  Visibility="Collapsed"
+                  IsTabStop="false"/>
+
+                            <Rectangle Grid.Row="1" Grid.RowSpan="3"
+       Cursor="SizeWE" Fill="Transparent" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Right"
+                ></Rectangle>
+
+
+                            <Rectangle Grid.Row="2" 
+     Cursor="SizeNS" Fill="Transparent" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              ></Rectangle>
+                        </Grid>
+
+                    </Border>
+            <ControlTemplate.Triggers>
+                        <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
+                            <Setter TargetName="WindowResizeGrip" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+ 
+    </Window.Template>
+    <Grid>
+        <TabControl Grid.Column="0" Grid.ColumnSpan="4" x:Name="maincontrol" Style="{StaticResource TabControlStyle1}">
+            <TabItem x:Name="mainWindow">
+                <Grid Background="#E6E2E7" Margin="0 2 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="0.71*"></ColumnDefinition>
+                        <ColumnDefinition MinWidth="365" MaxWidth="546" Width="0.29*"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="rightColumn" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Background="Transparent"></Grid>
+                   <Expander x:Name="leftPanel" BorderThickness="0" Panel.ZIndex="10" IsExpanded="False"
+                Grid.Column="2"  Grid.ColumnSpan="2"
+                ExpandDirection="Left"
+                HorizontalAlignment="Right"                 
+                Background="LightBlue" Style="{DynamicResource ExpanderStyle1}" >
+                        <Expander.Content>
+                            <Grid Width="{Binding ActualWidth, ElementName=rightColumn}" x:Name="mygrid" HorizontalAlignment="Stretch">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="21"></RowDefinition>
+                                    <RowDefinition Height="32"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" HorizontalAlignment="Stretch" Background="Transparent"></Grid>
+                                <Border Grid.Row="1" BorderThickness="0 1 0 0" BorderBrush="#E6E2E7" HorizontalAlignment="Stretch" Background="#F5F1F6">
+                                    <Label Margin="48 0 0 0" HorizontalAlignment="Left" Foreground="#453C48" Style="{StaticResource Label_16}" Content="МЕНЕДЖЕР ПРОЕКТОВ"></Label>
+                                </Border>
+                                <Border CornerRadius="0 0 0 4" HorizontalAlignment="Stretch" Background="#F5F1F6" Grid.Row="2" Margin="0">
+                                    <Border Margin="5 0 5 23">
+                                    <View:ProjectTreeView HorizontalAlignment="Stretch" DataContext="{Binding ProjectViewModel}"/>
+                                    </Border>
+                                </Border>
+                            </Grid>
+                        </Expander.Content>
+                    </Expander>
+                   <Grid Margin="0 20 0 20" Width="Auto" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" x:Name="MainGrid" VerticalAlignment="Stretch"  >
+                        <TabControl Margin="0 0 0 0" x:Name="TabControl1" BorderThickness="0" Padding="0,0,0,0" Background="Transparent" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{DynamicResource TabControlStyle1}">
+                            <TabItem x:Name="pgProducts" Padding="0,0,0,0" Visibility="Hidden">
+                                <Grid>
+                                    <TabControl  Background="Transparent" HorizontalAlignment="Stretch"   x:Name="TabControl2" BorderThickness="0" Padding="0,0,0,0" VerticalAlignment="Stretch" Style="{DynamicResource TabControlStyle1}">
+                                        <TabItem>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.71*"></ColumnDefinition>
+                                                    <ColumnDefinition MinWidth="365" MaxWidth="546" Width="0.29*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="400*"></RowDefinition>
+                                                    <RowDefinition Height="265*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <View:ProductView Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" x:Name="Products" DataContext="{Binding CurrentElement.IndexProductViewModel}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+                                                    <View:ProductView.Margin>
+                                                        <Thickness Right="{x:Static resources:WindowConstants.Margin}"/>
+                                                    </View:ProductView.Margin>
+                                                </View:ProductView>
+                                                <Grid Grid.Column="1" Grid.Row="0" Margin="0 0 0 0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                        <RowDefinition Height="*"></RowDefinition>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <TabControl SelectedIndex="{Binding SelectedIndex, ElementName=btnsUnderDiagramm, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Style="{StaticResource TabControlStyle1}">
+                                                        <TabItem>
+                                                            <Label  Template="{StaticResource TableTitle}" ContentStringFormat="ГИСТОГРАММА ЦЕН И ОБЪЕМОВ"/>
+                                                        </TabItem>
+                                                        <TabItem>
+                                                            <Label  Template="{StaticResource TableTitle}" ContentStringFormat="СОСТАВ СЕБЕСТОИМОСТИ"/>
+                                                        </TabItem>
+                                                    </TabControl>
+                                                        <Border BorderThickness="4" CornerRadius="3" BorderBrush="#B6ACB9" Grid.Row="1">
+                                                        <TabControl  SelectedIndex="{Binding SelectedIndex, ElementName=btnsUnderDiagramm, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TabControlStyle1}">
+                                                            <TabItem>
+                                                                <local:GistogrammDouble DataContext="{Binding CurrentElement.IndexProductViewModel.CurrentProduct.IndexRiskOfProductViewModel, Mode=OneWay}"/>
+                                                            </TabItem>
+                                                            <TabItem>
+                                                                <local:RingDiagramm DataContext="{Binding CurrentElement, Mode=OneWay}" x:Name="ringDiagramAVC" />
+                                                            </TabItem>                                                           
+                                                        </TabControl>
+                                                    </Border>
+                                                    <Grid Grid.Row="2">
+                                                        <ListBox SelectedIndex="0" x:Name="btnsUnderDiagramm" Template="{StaticResource ListBox_ButtonsUnderDiagramm_2}">
+                                                            <ListBoxItem Margin="2 0 1 0" Grid.Column="0"  Template="{StaticResource ButtonUnderDiagramm_Left}" ContentStringFormat="Гистограмма цен и объемов"></ListBoxItem>
+                                                            <ListBoxItem Margin="0 0 2 0" Grid.Column="1"  Template="{StaticResource ButtonUnderDiagramm_Right}" ContentStringFormat="Состав себестоимости"/>
+                                                        </ListBox>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid x:Name="histgrid"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1">
+                                                    <Grid.Margin>
+                                                        <Thickness Top="{x:Static resources:WindowConstants.Margin}"/>
+                                                    </Grid.Margin>
+                                                    <View:HistoryView SnapsToDevicePixels="True"  DataContext="{Binding CurrentElement.HistoryViewModel_Products, UpdateSourceTrigger=PropertyChanged}" />
+                                                </Grid>
+
+                                            </Grid>
+                                        </TabItem>
+                                        <TabItem>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.71*"></ColumnDefinition>
+                                                    <ColumnDefinition MinWidth="365" MaxWidth="546" Width="0.29*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="400*"></RowDefinition>
+                                                    <RowDefinition Height="265*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <View:GroupsView Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" x:Name="Groups" DataContext="{Binding CurrentElement.IndexGroupViewModel, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+                                                    <View:GroupsView.Margin>
+                                                        <Thickness Right="{x:Static resources:WindowConstants.Margin}"/>
+                                                    </View:GroupsView.Margin>
+                                                </View:GroupsView>
+                                                <Grid Grid.Column="1" Grid.Row="0" Margin="0 0 0 0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                        <RowDefinition Height="*"></RowDefinition>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <Label Grid.Row="0" Template="{StaticResource TableTitle}" ContentStringFormat="ДИАГРАММА СОСТАВА ГРУППЫ"/>
+                                                    <Border BorderThickness="4" CornerRadius="3" BorderBrush="#B6ACB9" Grid.Row="1">
+                                                        <TabControl Style="{StaticResource TabControlStyle1}">
+                                                            <TabItem>
+                                                                <local:CircleDiagramm DataContext="{Binding CurrentElement.IndexGroupViewModel, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" x:Name="circleDiagramGroups" />
+                                                            </TabItem>
+                                                        </TabControl>
+                                                    </Border>
+                                                </Grid>
+
+                                            </Grid>
+                                        </TabItem>
+                                    </TabControl>
+                                    </Grid>
+                            </TabItem >
+                            <TabItem x:Name="pgResources" Padding="0,0,0,0" Visibility="Hidden">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.71*"></ColumnDefinition>
+                                        <ColumnDefinition MinWidth="365" MaxWidth="546" Width="0.29*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="400*"></RowDefinition>
+                                        <RowDefinition Height="265*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <View:ResourceView   HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"  DataContext="{Binding CurrentElement.IndexResourcesViewModel, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" >
+                                        <View:ResourceView.Margin>
+                                            <Thickness Right="{x:Static resources:WindowConstants.Margin}"/>
+                                        </View:ResourceView.Margin>
+                                    </View:ResourceView>
+                                    <Grid Grid.Row="0" Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Template="{StaticResource TableTitle}" Grid.Row="0"   VerticalAlignment="Bottom" ContentStringFormat="УДЕЛЬНОЕ ПОТРЕБЛЕНИЕ РЕСУРСА"/>
+
+                                        <Border Grid.Row="1" Background="Transparent" BorderThickness="4" BorderBrush="#B6ACB9" CornerRadius="3" >
+                                            <local:HorizontalGistogram DataContext="{Binding CurrentElement.IndexResourcesViewModel,UpdateSourceTrigger=PropertyChanged}"/>
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="0">
+                                        <Grid.Margin>
+                                            <Thickness Right="{x:Static resources:WindowConstants.Margin}" Top="{x:Static resources:WindowConstants.Margin}"></Thickness>
+                                        </Grid.Margin>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="285*"></ColumnDefinition>
+                                            <ColumnDefinition Width="555*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" VerticalAlignment="Bottom" ContentStringFormat="ПРОИЗВОДСТВО И ЗАПАСЫ" Template="{StaticResource TableTitle}"/>
+                                            <Border Grid.Row="1" BorderBrush="#B6ACB9" CornerRadius="3" BorderThickness="4">
+                                                <local:TripleColumnDiagramm DataContext="{Binding CurrentElement.IndexResourcesViewModel}"/>
+                                            </Border>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <Grid.Margin>
+                                                <Thickness Left="{x:Static resources:WindowConstants.Margin}"></Thickness>
+                                            </Grid.Margin>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" VerticalAlignment="Bottom" ContentStringFormat="ШКАЛА СЕБЕСТОИМОСТИ" Template="{StaticResource TableTitle}"/>
+                                            <Border Grid.Row="1" BorderBrush="#B6ACB9" CornerRadius="3" BorderThickness="4">
+                                                <local:Gistogramm DataContext="{Binding CurrentElement.IndexResourcesViewModel}"/>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1">
+                                        <Grid.Margin>
+                                            <Thickness Top="{x:Static resources:WindowConstants.Margin}" />
+                                        </Grid.Margin>
+                                        <View:HistoryView  DataContext="{Binding CurrentElement.HistoryViewModel_Resources, UpdateSourceTrigger=PropertyChanged}" />
+                                    </Grid>
+                                </Grid>
+
+                            </TabItem>
+                            <TabItem x:Name="pgFixedFosts"  Padding="0,0,0,0" Visibility="Hidden">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.71*"></ColumnDefinition>
+                                        <ColumnDefinition MinWidth="365" MaxWidth="546" Width="0.29*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="400*"></RowDefinition>
+                                        <RowDefinition Height="265*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <View:FixedCostsView Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" DataContext="{Binding CurrentElement.BothFixedCostsViewModel, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Stretch" >
+                                        <View:FixedCostsView.Margin>
+                                                <Thickness Right="{x:Static resources:WindowConstants.Margin}"/>
+                                        </View:FixedCostsView.Margin>
+                                    </View:FixedCostsView>
+
+                                    <Grid Grid.Column="1" Grid.Row="0" Margin="0 0 0 0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <TabControl SelectedIndex="{Binding SelectedIndex, ElementName=btnsUnderDiagramm_FixedCosts, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Style="{StaticResource TabControlStyle1}">
+                                            <TabItem>
+                                                <Label  Template="{StaticResource TableTitle}" ContentStringFormat="СОСТАВ ДОПОЛНИТЕЛЬНЫХ ДОХОДОВ"/>
+                                            </TabItem>
+                                            <TabItem>
+                                                <Label  Template="{StaticResource TableTitle}" ContentStringFormat="СОСТАВ ДОПОЛНИТЕЛЬНЫХ РАСХОДОВ"/>
+                                            </TabItem>
+                                            <TabItem>
+                                                <Label  Template="{StaticResource TableTitle}" ContentStringFormat="САЛЬДО"/>
+                                            </TabItem>
+                                        </TabControl>
+                                        <Border BorderThickness="4" CornerRadius="3" BorderBrush="#B6ACB9" Grid.Row="1">
+                                            <TabControl SelectedIndex="{Binding SelectedIndex, ElementName=btnsUnderDiagramm_FixedCosts, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TabControlStyle1}">
+                                                <TabItem>
+                                                    <local:RingDiagram_FixedCosts DataContext="{Binding CurrentElement.BothFixedCostsViewModel.IndexFixedCostViewModel_In}"/>
+                                                </TabItem>
+                                                <TabItem>
+                                                    <local:RingDiagram_FixedCosts DataContext="{Binding CurrentElement.BothFixedCostsViewModel.IndexFixedCostViewModel_Out}"/>
+                                                </TabItem>
+                                                <TabItem>
+                                                    <local:GistogrammSaldo DataContext="{Binding CurrentElement.BothFixedCostsViewModel}"/>
+                                                </TabItem>
+                                            </TabControl>
+                                        </Border>
+                                        <Grid Grid.Row="2">
+                                            <ListBox x:Name="btnsUnderDiagramm_FixedCosts" Template="{StaticResource ListBox_ButtonsUnderDiagramm_3}">
+                                                <ListBoxItem Margin="2 0 1 0" Grid.Column="0" Template="{StaticResource ButtonUnderDiagramm_Left}" ContentStringFormat="Состав доп. доходов"></ListBoxItem>
+                                                <ListBoxItem Margin="0 0 0 0" Grid.Column="1" Template="{StaticResource ButtonUnderDiagramm_Center}" ContentStringFormat="Состав доп. расходов"/>
+                                                <ListBoxItem Margin="1 0 2 0" Grid.Column="2" Template="{StaticResource ButtonUnderDiagramm_Right}" ContentStringFormat="Сальдо"/>
+                                            </ListBox>
+                                        </Grid>
+                                    </Grid>
+
+                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1">
+                                        <Grid.Margin>
+                                            <Thickness  Top="{x:Static resources:WindowConstants.Margin}"/>
+                                        </Grid.Margin>
+                                        <View:HistoryView DataContext="{Binding CurrentElement.HistoryViewModel_FixedCosts}" />
+                                    </Grid>
+                                </Grid>
+
+                            </TabItem>
+                            <TabItem x:Name="pgAnalys" Padding="0,0,0,0" Visibility="Hidden" >
+                                <View:AnalysView x:Name="AnalysView" DataContext="{Binding CurrentElement.AnalysViewModel, Mode=OneWay}" VerticalAlignment="Stretch" Margin="0" HorizontalAlignment="Stretch"/>
+                            </TabItem>
+                            <TabItem x:Name="pgFlex" Padding="0,0,0,0"  Visibility="Hidden">
+                              <View:FlexibilityView Grid.Row="1" DataContext="{Binding CurrentElement.FlexibilityAnalysViewModel, Mode=OneWay}" x:Name="FlexibilityView" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0"></View:FlexibilityView>
+                            </TabItem>
+                            <TabItem x:Name="pgPDF" Visibility="Hidden">
+                                <Label Padding="10" Background="#efefef" FontSize="16" FontFamily="Calibri" BorderBrush="#cecece" BorderThickness="1" Content="PDF отчет находится в режиме тестирования и будет добавлен в ближайшем обновлении" Margin="20 40 20 40" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Settings">
+                <local:MainSettingView x:Name="settings" />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

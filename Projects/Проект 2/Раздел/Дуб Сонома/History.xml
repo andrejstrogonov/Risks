@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="utf-8"?>
+<History xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LastTimeAccess>2020-03-05T14:39:19.1959074+03:00</LastTimeAccess>
+  <HistoryList>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:01.9957307+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>
+Е.И. количества</Title>
+      <TitleChange>шт
+м</TitleChange>
+      <ID>3</ID>
+      <Property>UnitOfMaximumID</Property>
+      <LastValue xsi:type="xsd:long">10</LastValue>
+      <NewValue xsi:type="xsd:long">14</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:23.3366318+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Место для больших досок</TitleChange>
+      <ID>3</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Место для больших досок</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:24.8714646+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Стоимость</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>3</ID>
+      <Property>Price</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:27.9365774+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Максимум</Title>
+      <TitleChange>
+2,00</TitleChange>
+      <ID>3</ID>
+      <Property>Maximum</Property>
+      <NewValue xsi:type="xsd:double">2</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:29.9277772+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>3</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:33.0797365+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>3</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:34.6716079+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>3</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:38.8789561+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Скоропорт</Title>
+      <TitleChange>Нет
+Не указано</TitleChange>
+      <ID>3</ID>
+      <Property>Perishable</Property>
+      <LastValue xsi:type="xsd:boolean">false</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:39.3431152+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Скоропорт</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>3</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:43.6233722+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Скоропорт</Title>
+      <TitleChange>Да
+Не указано</TitleChange>
+      <ID>3</ID>
+      <Property>Perishable</Property>
+      <LastValue xsi:type="xsd:boolean">true</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:43.7865825+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>3</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:14:54.0765346+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Место для средних досок</TitleChange>
+      <ID>4</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Место для средних досок</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:01.1249528+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Место для малых досок</TitleChange>
+      <ID>5</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Место для малых досок</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:13.2561449+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для средних досок
+Стоимость</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>4</ID>
+      <Property>Price</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:15.4958684+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для малых досок
+Стоимость</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>5</ID>
+      <Property>Price</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:22.5719861+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Максимум</Title>
+      <TitleChange>2,00
+6,00</TitleChange>
+      <ID>3</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">2</LastValue>
+      <NewValue xsi:type="xsd:double">6</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:24.8915545+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для средних досок
+Максимум</Title>
+      <TitleChange>
+4,00</TitleChange>
+      <ID>4</ID>
+      <Property>Maximum</Property>
+      <NewValue xsi:type="xsd:double">4</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:47.5876796+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для малых досок
+Максимум</Title>
+      <TitleChange>
+4,00</TitleChange>
+      <ID>5</ID>
+      <Property>Maximum</Property>
+      <NewValue xsi:type="xsd:double">4</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:51.312707+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для средних досок
+Е.И. количества</Title>
+      <TitleChange>кг
+м</TitleChange>
+      <ID>4</ID>
+      <Property>UnitOfMaximumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">14</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:53.5609974+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для малых досок
+Е.И. количества</Title>
+      <TitleChange>кг
+м</TitleChange>
+      <ID>5</ID>
+      <Property>UnitOfMaximumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">14</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:55.4275653+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для средних досок
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>4</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:15:57.0516927+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для малых досок
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>5</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:16:00.8960369+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для средних досок
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>4</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:16:01.4476677+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для малых досок
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>5</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:16:02.4557976+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для средних досок
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>4</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:16:02.7757437+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для малых досок
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>5</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:21:08.857502+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Доставка до магазина
+Е.И. количества</Title>
+      <TitleChange>шт
+кг</TitleChange>
+      <ID>1</ID>
+      <Property>UnitOfMaximumID</Property>
+      <LastValue xsi:type="xsd:long">10</LastValue>
+      <NewValue xsi:type="xsd:long">6</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:21:11.0489205+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Стоимость закупки материалов
+Е.И. количества</Title>
+      <TitleChange>шт
+кг</TitleChange>
+      <ID>2</ID>
+      <Property>UnitOfMaximumID</Property>
+      <LastValue xsi:type="xsd:long">10</LastValue>
+      <NewValue xsi:type="xsd:long">6</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:24:09.3210776+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>12</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">12</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:27:17.8785025+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х600х16 мм, кромка с длинных сторон
+Минимум</Title>
+      <TitleChange>
+20,00</TitleChange>
+      <ID>1</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">20</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:27:29.4853307+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х500х16 мм, кромка с длинных сторон
+Минимум</Title>
+      <TitleChange>
+20,00</TitleChange>
+      <ID>2</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">20</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:27:32.4776269+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х300х16 мм, кромка с длинных сторон
+Минимум</Title>
+      <TitleChange>
+20,00</TitleChange>
+      <ID>6</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">20</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:27:55.2291265+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х300х16 мм, кромка со всех сторон
+Минимум</Title>
+      <TitleChange>
+15,00</TitleChange>
+      <ID>7</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">15</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:01.6132952+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х1200х16 мм, без кромки
+Минимум</Title>
+      <TitleChange>
+20,00</TitleChange>
+      <ID>8</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">20</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:03.9332794+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 600х300х16 мм, кромка со всех сторон
+Минимум</Title>
+      <TitleChange>
+15,00</TitleChange>
+      <ID>9</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">15</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:10.1491037+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 600х300х16 мм, кромка со всех сторон
+Минимум</Title>
+      <TitleChange>15,00
+30,00</TitleChange>
+      <ID>9</ID>
+      <Property>Minimum</Property>
+      <LastValue xsi:type="xsd:double">15</LastValue>
+      <NewValue xsi:type="xsd:double">30</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:12.445833+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 800х400х16 мм, кромка со всех сторон
+Минимум</Title>
+      <TitleChange>
+30,00</TitleChange>
+      <ID>10</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">30</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:16.4776451+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х400х16 мм, кромка со всех сторон
+Минимум</Title>
+      <TitleChange>
+15,00</TitleChange>
+      <ID>11</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">15</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:28.4567059+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х600х16 мм, кромка с длинных сторон
+Е.И. Количества</Title>
+      <TitleChange>кг
+шт</TitleChange>
+      <ID>1</ID>
+      <Property>UnitOfMimimumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:30.0233838+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х500х16 мм, кромка с длинных сторон
+Е.И. Количества</Title>
+      <TitleChange>кг
+шт</TitleChange>
+      <ID>2</ID>
+      <Property>UnitOfMimimumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:31.4631301+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х300х16 мм, кромка с длинных сторон
+Е.И. Количества</Title>
+      <TitleChange>кг
+шт</TitleChange>
+      <ID>6</ID>
+      <Property>UnitOfMimimumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:33.0317009+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х300х16 мм, кромка со всех сторон
+Е.И. Количества</Title>
+      <TitleChange>кг
+шт</TitleChange>
+      <ID>7</ID>
+      <Property>UnitOfMimimumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:34.3355128+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х1200х16 мм, без кромки
+Е.И. Количества</Title>
+      <TitleChange>кг
+шт</TitleChange>
+      <ID>8</ID>
+      <Property>UnitOfMimimumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:35.6633213+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 600х300х16 мм, кромка со всех сторон
+Е.И. Количества</Title>
+      <TitleChange>кг
+шт</TitleChange>
+      <ID>9</ID>
+      <Property>UnitOfMimimumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:37.0312812+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 800х400х16 мм, кромка со всех сторон
+Е.И. Количества</Title>
+      <TitleChange>кг
+шт</TitleChange>
+      <ID>10</ID>
+      <Property>UnitOfMimimumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:38.7910663+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х400х16 мм, кромка со всех сторон
+Е.И. Количества</Title>
+      <TitleChange>кг
+шт</TitleChange>
+      <ID>11</ID>
+      <Property>UnitOfMimimumID</Property>
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <NewValue xsi:type="xsd:long">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:40.4970928+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х600х16 мм, кромка с длинных сторон
+Целочисленность</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>1</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:40.857601+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х600х16 мм, кромка с длинных сторон
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>1</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:41.4883458+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х500х16 мм, кромка с длинных сторон
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>2</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:41.8971694+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х300х16 мм, кромка с длинных сторон
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>6</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:42.391668+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х500х16 мм, кромка с длинных сторон
+Целочисленность</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>2</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:42.7202985+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х300х16 мм, кромка с длинных сторон
+Целочисленность</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>6</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:43.1684177+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х300х16 мм, кромка со всех сторон
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>7</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:43.7202921+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х1200х16 мм, без кромки
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>8</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:44.2803432+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х300х16 мм, кромка со всех сторон
+Целочисленность</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>7</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:44.648287+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х1200х16 мм, без кромки
+Целочисленность</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>8</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:45.0168669+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 600х300х16 мм, кромка со всех сторон
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>9</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:45.440286+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 600х300х16 мм, кромка со всех сторон
+Целочисленность</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>9</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:45.8002584+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 800х400х16 мм, кромка со всех сторон
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>10</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:46.1925902+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 800х400х16 мм, кромка со всех сторон
+Целочисленность</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>10</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:46.5994962+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х400х16 мм, кромка со всех сторон
+Целочисленность</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>11</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:46.9282707+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х400х16 мм, кромка со всех сторон
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>11</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:50.8090074+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х600х16 мм, кромка с длинных сторон
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>1</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:51.3364075+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х500х16 мм, кромка с длинных сторон
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>2</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:51.7925733+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х300х16 мм, кромка с длинных сторон
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>6</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:52.2477164+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х300х16 мм, кромка со всех сторон
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>7</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:52.8805846+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 2700х1200х16 мм, без кромки
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>8</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:53.376816+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 600х300х16 мм, кромка со всех сторон
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>9</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:53.8636644+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 800х400х16 мм, кромка со всех сторон
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>10</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:28:56.0003165+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 1200х400х16 мм, кромка со всех сторон
+Запасы</Title>
+      <TitleChange>
+0,00</TitleChange>
+      <ID>11</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:31:59.3084579+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Максимум</Title>
+      <TitleChange>6,00
+5,00</TitleChange>
+      <ID>3</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">6</LastValue>
+      <NewValue xsi:type="xsd:double">5</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:32:02.005201+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для средних досок
+Максимум</Title>
+      <TitleChange>4,00
+3,00</TitleChange>
+      <ID>4</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">4</LastValue>
+      <NewValue xsi:type="xsd:double">3</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:32:06.8526349+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для малых досок
+Максимум</Title>
+      <TitleChange>4,00
+2,00</TitleChange>
+      <ID>5</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">4</LastValue>
+      <NewValue xsi:type="xsd:double">2</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:32:23.4095066+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Максимум</Title>
+      <TitleChange>5,00
+2,50</TitleChange>
+      <ID>3</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">5</LastValue>
+      <NewValue xsi:type="xsd:double">2.5</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-26T16:32:36.6286646+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Максимум</Title>
+      <TitleChange>2,50
+5,00</TitleChange>
+      <ID>3</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">2.5</LastValue>
+      <NewValue xsi:type="xsd:double">5</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-27T13:57:20.1621388+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 600х300х16 мм, кромка со всех сторон
+Целочисленность</Title>
+      <TitleChange>Да
+Не указано</TitleChange>
+      <ID>9</ID>
+      <Property>IsInteger</Property>
+      <LastValue xsi:type="xsd:boolean">true</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-27T13:57:21.5295179+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Деталь мебельная 600х300х16 мм, кромка со всех сторон
+Целочисленность</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>9</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-03-02T00:54:26.2429913+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Максимум</Title>
+      <TitleChange>5,00
+∞</TitleChange>
+      <ID>3</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">5</LastValue>
+      <NewValue xsi:type="xsd:double">INF</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-03-02T00:54:33.3748399+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Максимум</Title>
+      <TitleChange>∞
+5,00</TitleChange>
+      <ID>3</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">INF</LastValue>
+      <NewValue xsi:type="xsd:double">5</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-03-02T01:06:56.6295602+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для средних досок
+Максимум</Title>
+      <TitleChange>∞
+3,00</TitleChange>
+      <ID>4</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">INF</LastValue>
+      <NewValue xsi:type="xsd:double">3</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-03-02T01:07:00.1581592+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Место для больших досок
+Максимум</Title>
+      <TitleChange>∞
+5,00</TitleChange>
+      <ID>3</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">INF</LastValue>
+      <NewValue xsi:type="xsd:double">5</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-03-02T21:53:28.3550419+03:00</DateTime>
+      <TypeOfItem>ResourceOfProduct</TypeOfItem>
+      <Title>Деталь мебельная 2700х600х16 мм, кромка с длинных сторон
+Место для больших досок</Title>
+      <TitleChange>1,60
+11,60</TitleChange>
+      <ID>3</ID>
+      <Property>AmountOfResource</Property>
+      <LastValue xsi:type="xsd:double">1.6</LastValue>
+      <NewValue xsi:type="xsd:double">11.6</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-03-02T21:53:39.6181309+03:00</DateTime>
+      <TypeOfItem>ResourceOfProduct</TypeOfItem>
+      <Title>Деталь мебельная 2700х600х16 мм, кромка с длинных сторон
+Место для больших досок</Title>
+      <TitleChange>11,60
+1,60</TitleChange>
+      <ID>3</ID>
+      <Property>AmountOfResource</Property>
+      <LastValue xsi:type="xsd:double">11.6</LastValue>
+      <NewValue xsi:type="xsd:double">1.6</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-03-02T22:13:13.0444921+03:00</DateTime>
+      <TypeOfItem>RiskOfProduct</TypeOfItem>
+      <Title>Деталь мебельная 2700х600х16 мм, кромка с длинных сторон
+756: Максимум</Title>
+      <TitleChange>80,00
+85,00</TitleChange>
+      <ID>2</ID>
+      <Property>MaximumAmount</Property>
+      <LastValue xsi:type="xsd:double">80</LastValue>
+      <NewValue xsi:type="xsd:double">85</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-03-02T22:13:20.7424223+03:00</DateTime>
+      <TypeOfItem>RiskOfProduct</TypeOfItem>
+      <Title>Деталь мебельная 2700х600х16 мм, кромка с длинных сторон
+756: Максимум</Title>
+      <TitleChange>85,00
+80,00</TitleChange>
+      <ID>2</ID>
+      <Property>MaximumAmount</Property>
+      <LastValue xsi:type="xsd:double">85</LastValue>
+      <NewValue xsi:type="xsd:double">80</NewValue>
+      <GroupItems />
+    </HistoryItem>
+  </HistoryList>
+</History>

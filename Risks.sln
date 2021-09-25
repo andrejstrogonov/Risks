@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Risks", "Riscks\Risks.csproj", "{FC1C8EB2-84D3-4BA8-AD3D-F7EB02A12AD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteLibrary", "SQLiteLibrary\SQLiteLibrary.csproj", "{F01DCDC1-9CFE-4CB4-8516-18A4DCFF1E3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessLibrary", "DataProcessLibrary\DataProcessLibrary.csproj", "{4F4B9C80-1F18-4609-8B6E-9794A81DB132}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A892266-FFBA-4198-B36E-2671D22C4B0D} = {5A892266-FFBA-4198-B36E-2671D22C4B0D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagerLibrary", "ProjectManagerLibrary\ProjectManagerLibrary.csproj", "{CC219046-0908-49F1-A89B-9DA8FCC99C75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplexPlan", "SimplexPlan\SimplexPlan.csproj", "{5A892266-FFBA-4198-B36E-2671D22C4B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientServerLibrary", "ClientServerLibrary\ClientServerLibrary.csproj", "{3C66F715-E36C-470B-BCB9-73A9F1997197}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SimplexPlan_Setup", "SimplexPlan_Setup\SimplexPlan_Setup.vdproj", "{BB96884A-F931-44B0-AA7B-6D843F90E76A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC1C8EB2-84D3-4BA8-AD3D-F7EB02A12AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1C8EB2-84D3-4BA8-AD3D-F7EB02A12AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1C8EB2-84D3-4BA8-AD3D-F7EB02A12AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1C8EB2-84D3-4BA8-AD3D-F7EB02A12AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F01DCDC1-9CFE-4CB4-8516-18A4DCFF1E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F01DCDC1-9CFE-4CB4-8516-18A4DCFF1E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F01DCDC1-9CFE-4CB4-8516-18A4DCFF1E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F01DCDC1-9CFE-4CB4-8516-18A4DCFF1E3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F4B9C80-1F18-4609-8B6E-9794A81DB132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F4B9C80-1F18-4609-8B6E-9794A81DB132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F4B9C80-1F18-4609-8B6E-9794A81DB132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F4B9C80-1F18-4609-8B6E-9794A81DB132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC219046-0908-49F1-A89B-9DA8FCC99C75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC219046-0908-49F1-A89B-9DA8FCC99C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC219046-0908-49F1-A89B-9DA8FCC99C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC219046-0908-49F1-A89B-9DA8FCC99C75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A892266-FFBA-4198-B36E-2671D22C4B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A892266-FFBA-4198-B36E-2671D22C4B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A892266-FFBA-4198-B36E-2671D22C4B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A892266-FFBA-4198-B36E-2671D22C4B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C66F715-E36C-470B-BCB9-73A9F1997197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C66F715-E36C-470B-BCB9-73A9F1997197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C66F715-E36C-470B-BCB9-73A9F1997197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C66F715-E36C-470B-BCB9-73A9F1997197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB96884A-F931-44B0-AA7B-6D843F90E76A}.Debug|Any CPU.ActiveCfg = Debug
+		{BB96884A-F931-44B0-AA7B-6D843F90E76A}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFC4493C-B431-4654-ACD0-1F3650ACC4F9}
+	EndGlobalSection
+EndGlobal

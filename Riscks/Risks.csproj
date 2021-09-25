@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC1C8EB2-84D3-4BA8-AD3D-F7EB02A12AD2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Riscks</RootNamespace>
+    <AssemblyName>Riscks</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Olga Shishkina\Desktop\publish_simplex\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>24E5DBBE4CAEEA2C71336182169827E22D6D274F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Risks_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClientServerLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ClientServerLibrary\bin\Release\ClientServerLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack.Core.1.1.0\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack.Shell.1.1.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="SQLiteLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SQLiteLibrary\bin\Debug\SQLiteLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.DataVisualization.3.5.50211.1\lib\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\AcceptChangesCommand.cs" />
+    <Compile Include="Commands\AddFixedCostCommand.cs" />
+    <Compile Include="Commands\AddGroupCommand.cs" />
+    <Compile Include="Commands\AddUnitCommand.cs" />
+    <Compile Include="Commands\AddUnitSeqCommand.cs" />
+    <Compile Include="Commands\BackAnalysSettingCommand.cs" />
+    <Compile Include="Commands\BackCommonAnalysSettings.cs" />
+    <Compile Include="Commands\CanselIndexUnitCommand.cs" />
+    <Compile Include="Commands\CreateProjectCommand.cs" />
+    <Compile Include="Commands\CreateSectionCommand.cs" />
+    <Compile Include="Commands\CreateSessionCommand.cs" />
+    <Compile Include="Commands\DefaultAnalysSettingCommand.cs" />
+    <Compile Include="Commands\DeleteFixedCostCommand.cs" />
+    <Compile Include="Commands\DeleteGroupCommand.cs" />
+    <Compile Include="Commands\DeleteProjectCommand.cs" />
+    <Compile Include="Commands\DeleteSessionCommand.cs" />
+    <Compile Include="Commands\DeleteUnitCommand.cs" />
+    <Compile Include="Commands\DeleteUnitSeqCommand.cs" />
+    <Compile Include="Commands\MoveProductsCommand.cs" />
+    <Compile Include="Commands\OpenSessionSelectionCommand.cs" />
+    <Compile Include="Commands\OpenFlexibilityAnalysCommand.cs" />
+    <Compile Include="Commands\OpenGraphicCommand.cs" />
+    <Compile Include="Commands\OpenMainSettingsCommand.cs" />
+    <Compile Include="Commands\OpenProjectCommand.cs" />
+    <Compile Include="Commands\OpenSessionCommand.cs" />
+    <Compile Include="Commands\SaveAnalysSettingsCommand.cs" />
+    <Compile Include="Commands\SaveAsSessionCommand.cs" />
+    <Compile Include="Commands\SaveCommonAnalysSettings.cs" />
+    <Compile Include="Commands\SaveFlexibilityCommand.cs" />
+    <Compile Include="Commands\SaveIndexUnitCommand.cs" />
+    <Compile Include="Commands\SelectMenuItemCommand.cs" />
+    <Compile Include="Commands\SelectProjectCommand.cs" />
+    <Compile Include="Commands\SetFlexibilityParametersCommand.cs" />
+    <Compile Include="Commands\SetInfinityCommand.cs" />
+    <Compile Include="Converters\ColorFromPaletteConv.cs" />
+    <Compile Include="Converters\GetOddConverter.cs" />
+    <Compile Include="Converters\HeightToMarginConv.cs" />
+    <Compile Include="Converters\ItemsToCountConverter.cs" />
+    <Compile Include="Converters\StringToNumberConverter.cs" />
+    <Compile Include="Converters\ToIntConverter.cs" />
+    <Compile Include="Converters\VisibilityHistoryConverter.cs" />
+    <Compile Include="Converters\VisibilityToIntConverter.cs" />
+    <Compile Include="Converters\Width30Converter.cs" />
+    <Compile Include="Converters\WidthToMarginConverter.cs" />
+    <Compile Include="Converters\BoolToIntConverter.cs" />
+    <Compile Include="Converters\FromDoubleToImageConverter.cs" />
+    <Compile Include="Converters\VisibilityToBoolConverter.cs" />
+    <Compile Include="Converters\WidthToPopupWidthConverter.cs" />
+    <Compile Include="Resources\WindowConstants.cs" />
+    <Compile Include="ViewModel\AnalysSettingsViewModel.cs" />
+    <Compile Include="ViewModel\BothFixedCostsViewModel.cs" />
+    <Compile Include="ViewModel\CommonAnalysViewModel.cs" />
+    <Compile Include="ViewModel\CommonViewModel.cs" />
+    <Compile Include="ViewModel\CreateProjectViewModel.cs" />
+    <Compile Include="ViewModel\DirectoryTree.cs" />
+    <Compile Include="ViewModel\FixedCostViewModel.cs" />
+    <Compile Include="ViewModel\HistoryViewModel.cs" />
+    <Compile Include="ViewModel\IndexFixedCostViewModel.cs" />
+    <Compile Include="ViewModel\IndexResourceScriptViewModel.cs" />
+    <Compile Include="ViewModel\LauncherViewModel.cs" />
+    <Compile Include="ViewModel\MenuViewModel.cs" />
+    <Compile Include="ViewModel\ProgressLineViewModel.cs" />
+    <Compile Include="ViewModel\ResourceScriptViewModel.cs" />
+    <Compile Include="ViewModel\RiskOfProductScriptViewModel.cs" />
+    <Compile Include="ViewModel\FlexibilityAnalysViewModel.cs" />
+    <Compile Include="ViewModel\GroupViewModel.cs" />
+    <Compile Include="ViewModel\IndexCommonDecidionViewModel.cs" />
+    <Compile Include="ViewModel\DecidionScriptViewModel.cs" />
+    <Compile Include="ViewModel\IndexGroupViewModel.cs" />
+    <Compile Include="ViewModel\IndexUnitViewModel.cs" />
+    <Compile Include="ViewModel\MainSettingsViewModel.cs" />
+    <Compile Include="ViewModel\MemberOfGroupViewModel.cs" />
+    <Compile Include="ViewModel\ProfitFlexibilityViewModel.cs" />
+    <Compile Include="ViewModel\ProjectViewModel.cs" />
+    <Compile Include="ViewModel\SessionDataViewModel.cs" />
+    <Compile Include="ViewModel\SessionSelectViewModel.cs" />
+    <Compile Include="ViewModel\TransferOfUnitsViewModel.cs" />
+    <Compile Include="ViewModel\UnitViewModel.cs" />
+    <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="View\AnalysView.xaml.cs">
+      <DependentUpon>AnalysView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BindingProxy.cs" />
+    <Compile Include="View\CircleDiagramm.xaml.cs">
+      <DependentUpon>CircleDiagramm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommonAnalysView.xaml.cs">
+      <DependentUpon>CommonAnalysView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreateProjectView.xaml.cs">
+      <DependentUpon>CreateProjectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreateProjectWindow.xaml.cs">
+      <DependentUpon>CreateProjectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomControls.cs" />
+    <Compile Include="View\FixedCostsView.xaml.cs">
+      <DependentUpon>FixedCostsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FlexibilityView.xaml.cs">
+      <DependentUpon>FlexibilityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GistogramAnalys_Flexibility.xaml.cs">
+      <DependentUpon>GistogramAnalys_Flexibility.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gistogramm.xaml.cs">
+      <DependentUpon>Gistogramm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GistogrammAnalys.xaml.cs">
+      <DependentUpon>GistogrammAnalys.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GistogrammDouble.xaml.cs">
+      <DependentUpon>GistogrammDouble.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GistogrammSaldo.xaml.cs">
+      <DependentUpon>GistogrammSaldo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GroupsView.xaml.cs">
+      <DependentUpon>GroupsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistoryView.xaml.cs">
+      <DependentUpon>HistoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HorizontalGistogram.xaml.cs">
+      <DependentUpon>HorizontalGistogram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HorizontalGistogram_Flexibility.xaml.cs">
+      <DependentUpon>HorizontalGistogram_Flexibility.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InputKeyWindow.xaml.cs">
+      <DependentUpon>InputKeyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InputSessionDataView.xaml.cs">
+      <DependentUpon>InputSessionDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LauncherWindow.xaml.cs">
+      <DependentUpon>LauncherWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoadingLineWindow.xaml.cs">
+      <DependentUpon>LoadingLineWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainMenuView.xaml.cs">
+      <DependentUpon>MainMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainSettingView.xaml.cs">
+      <DependentUpon>MainSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PointDescriptionView.xaml.cs">
+      <DependentUpon>PointDescriptionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectTreeView.xaml.cs">
+      <DependentUpon>ProjectTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ResourceOfProductView.xaml.cs">
+      <DependentUpon>ResourceOfProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ResourceView.xaml.cs">
+      <DependentUpon>ResourceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RingDiagramm.xaml.cs">
+      <DependentUpon>RingDiagramm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RingDiagramm_Analys.xaml.cs">
+      <DependentUpon>RingDiagramm_Analys.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RingDiagram_FixedCosts.xaml.cs">
+      <DependentUpon>RingDiagram_FixedCosts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RiskOfProductView.xaml.cs">
+      <DependentUpon>RiskOfProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TripleColumnDiagramm.xaml.cs">
+      <DependentUpon>TripleColumnDiagramm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UnitSettingsView.xaml.cs">
+      <DependentUpon>UnitSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resources\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CheckBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ComboBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\FlexibilityResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\GraphicResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Commands\AddProductCommand.cs" />
+    <Compile Include="Commands\AddResourceCommand.cs" />
+    <Compile Include="Commands\AddResourceOfProductCommand.cs" />
+    <Compile Include="Commands\AddRiskCommand.cs" />
+    <Compile Include="Commands\DeleteProductCommand.cs" />
+    <Compile Include="Commands\DeleteResourceCommand.cs" />
+    <Compile Include="Commands\DeleteResourceOfProductCommand.cs" />
+    <Compile Include="Commands\DeleteRiskCommand.cs" />
+    <Compile Include="ViewModel\AnalysViewModel.cs" />
+    <Compile Include="ViewModel\GraphicViewModel.cs" />
+    <Compile Include="ViewModel\IndexProductViewModel.cs" />
+    <Compile Include="ViewModel\IndexResourceOfProductViewModel.cs" />
+    <Compile Include="ViewModel\IndexResourcesViewModel.cs" />
+    <Compile Include="ViewModel\IndexRiskOfProductViewModel.cs" />
+    <Compile Include="ViewModel\ProductViewModel.cs" />
+    <Compile Include="ViewModel\ResourceOfProductViewModel.cs" />
+    <Compile Include="ViewModel\ResourceViewModel.cs" />
+    <Compile Include="ViewModel\RiskOfProductViewModel.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\BoolToColorConverter.cs" />
+    <Page Include="Resources\GridStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ListBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ScrollStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\SliderStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\TabControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\TreeViewStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AnalysView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CircleDiagramm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CommonAnalysView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreateProjectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreateProjectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FixedCostsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FlexibilityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GistogramAnalys_Flexibility.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Gistogramm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GistogrammAnalys.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GistogrammDouble.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GistogrammSaldo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GroupsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HistoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HorizontalGistogram.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HorizontalGistogram_Flexibility.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\InputKeyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\InputSessionDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LauncherWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoadingLineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PointDescriptionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProjectTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ResourceOfProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ResourceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RingDiagramm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RingDiagramm_Analys.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RingDiagram_FixedCosts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RiskOfProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\StylesResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TripleColumnDiagramm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UnitSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="help.docx" />
+    <None Include="help.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProcessLibrary\DataProcessLibrary.csproj">
+      <Project>{4F4B9C80-1F18-4609-8B6E-9794A81DB132}</Project>
+      <Name>DataProcessLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectManagerLibrary\ProjectManagerLibrary.csproj">
+      <Project>{CC219046-0908-49F1-A89B-9DA8FCC99C75}</Project>
+      <Name>ProjectManagerLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimplexPlan\SimplexPlan.csproj">
+      <Project>{5A892266-FFBA-4198-B36E-2671D22C4B0D}</Project>
+      <Name>SimplexPlan</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\logo_small.png" />
+    <Resource Include="License-LGPL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\close_launch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\logo-SP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\logo-SP-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\fold_launch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\strelka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\close_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\desk_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\write.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="license_key.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

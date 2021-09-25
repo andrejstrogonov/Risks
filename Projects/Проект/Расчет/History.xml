@@ -1,0 +1,1227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<History xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LastTimeAccess>2020-02-26T13:33:10.1754233+03:00</LastTimeAccess>
+  <HistoryList>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:07:56.1747184+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Bnvfkkkf
+Стоимость</Title>
+      <TitleChange>1234321,124
+124</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">1234321.124</LastValue>
+      <NewValue xsi:type="xsd:double">124</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:08:11.9498312+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Bnvfkkkf
+Стоимость</Title>
+      <TitleChange>124
+124</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">124</LastValue>
+      <NewValue xsi:type="xsd:double">124</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:08:25.5754058+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Bnvfkkkf
+Стоимость</Title>
+      <TitleChange>124
+124,45</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">124</LastValue>
+      <NewValue xsi:type="xsd:double">124.45</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:11:02.6418702+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Bnvfkkkf
+Стоимость</Title>
+      <TitleChange>124,45
+124,6798</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">124.45</LastValue>
+      <NewValue xsi:type="xsd:double">124.6798</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:11:11.7645075+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Bnvfkkkf
+Стоимость</Title>
+      <TitleChange>124,6798
+124,76</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">124.6798</LastValue>
+      <NewValue xsi:type="xsd:double">124.76</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:11:23.8539823+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Bnvfkkkf
+Стоимость</Title>
+      <TitleChange>124,76
+124,67</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">124.76</LastValue>
+      <NewValue xsi:type="xsd:double">124.67</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:11:29.3877971+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Bnvfkkkf
+Стоимость</Title>
+      <TitleChange>124,67
+</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">124.67</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:13:21.7411428+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>gjgjfjfjfj
+Наименование</Title>
+      <TitleChange>gjgjfjfjfj
+gjgjfjfjfjоио</TitleChange>
+      <ID>1</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string">gjgjfjfjfj</LastValue>
+      <NewValue xsi:type="xsd:string">gjgjfjfjfjоио</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:13:26.3433435+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>gjgjfjfjfjоио
+Наименование</Title>
+      <TitleChange>gjgjfjfjfjоио
+123456</TitleChange>
+      <ID>1</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string">gjgjfjfjfjоио</LastValue>
+      <NewValue xsi:type="xsd:string">123456</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:30:40.6924361+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>123456
+Наименование</Title>
+      <TitleChange>123456
+игрушка</TitleChange>
+      <ID>1</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string">123456</LastValue>
+      <NewValue xsi:type="xsd:string">игрушка</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:30:43.5744404+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+петрушка</TitleChange>
+      <ID>2</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">петрушка</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:30:50.8020537+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Минимум</Title>
+      <TitleChange>
+12356</TitleChange>
+      <ID>2</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">12356</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:30:57.6083821+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>игрушка
+Минимум</Title>
+      <TitleChange>18283746
+283746</TitleChange>
+      <ID>1</ID>
+      <Property>Minimum</Property>
+      <LastValue xsi:type="xsd:double">18283746</LastValue>
+      <NewValue xsi:type="xsd:double">283746</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:02.1972315+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Запасы</Title>
+      <TitleChange>
+2245</TitleChange>
+      <ID>2</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">2245</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:03.982541+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>игрушка
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>1</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:04.6153478+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>2</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:13.2381306+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>Bnvfkkkf
+Наименование</Title>
+      <TitleChange>Bnvfkkkf
+пиндюшка</TitleChange>
+      <ID>1</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string">Bnvfkkkf</LastValue>
+      <NewValue xsi:type="xsd:string">пиндюшка</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:19.6260207+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>fkjkksksk
+Наименование</Title>
+      <TitleChange>fkjkksksk
+говнюшка</TitleChange>
+      <ID>2</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string">fkjkksksk</LastValue>
+      <NewValue xsi:type="xsd:string">говнюшка</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:24.7071356+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>пиндюшка
+Стоимость</Title>
+      <TitleChange>
+123</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <NewValue xsi:type="xsd:double">123</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:30.7078621+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>говнюшка
+Стоимость</Title>
+      <TitleChange>1242345,23
+523</TitleChange>
+      <ID>2</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">1242345.23</LastValue>
+      <NewValue xsi:type="xsd:double">523</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:45.9799317+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>говнюшка
+Запасы</Title>
+      <TitleChange>234542
+54</TitleChange>
+      <ID>2</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">234542</LastValue>
+      <NewValue xsi:type="xsd:double">54</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:51.39017+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>пиндюшка
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>1</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:52.0361232+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>говнюшка
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>2</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:52.954488+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>пиндюшка
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>1</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:31:53.5273878+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>говнюшка
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>2</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:32:38.4254633+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>игрушка
+Минимум</Title>
+      <TitleChange>283746
+746</TitleChange>
+      <ID>1</ID>
+      <Property>Minimum</Property>
+      <LastValue xsi:type="xsd:double">283746</LastValue>
+      <NewValue xsi:type="xsd:double">746</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T01:32:41.2447276+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Минимум</Title>
+      <TitleChange>12356
+123</TitleChange>
+      <ID>2</ID>
+      <Property>Minimum</Property>
+      <LastValue xsi:type="xsd:double">12356</LastValue>
+      <NewValue xsi:type="xsd:double">123</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:48:47.4259425+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>игрушка
+Минимум</Title>
+      <TitleChange>746,00
+1 234,00</TitleChange>
+      <ID>1</ID>
+      <Property>Minimum</Property>
+      <LastValue xsi:type="xsd:double">746</LastValue>
+      <NewValue xsi:type="xsd:double">1234</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:49:22.610473+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>игрушка
+Наименование</Title>
+      <TitleChange>игрушка
+игрушка_2</TitleChange>
+      <ID>1</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string">игрушка</LastValue>
+      <NewValue xsi:type="xsd:string">игрушка_2</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:49:46.5100666+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Минимум</Title>
+      <TitleChange>
+342,00</TitleChange>
+      <ID>3</ID>
+      <Property>Minimum</Property>
+      <NewValue xsi:type="xsd:double">342</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:50:29.2734597+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+маринушка</TitleChange>
+      <ID>3</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">маринушка</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:50:34.8574822+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>маринушка
+Запасы</Title>
+      <TitleChange>
+1 234,00</TitleChange>
+      <ID>3</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">1234</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:50:46.7810915+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>маринушка
+Запасы</Title>
+      <TitleChange>1 234,00
+1 230,00</TitleChange>
+      <ID>3</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">1234</LastValue>
+      <NewValue xsi:type="xsd:double">1230</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:50:52.2128444+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>маринушка
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>3</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:50:53.8664109+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>маринушка
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>3</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:50:54.6283733+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>2</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:50:56.1127074+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>игрушка_2
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>1</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-07T02:54:19.7210262+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>Амортизация
+Стоимость</Title>
+      <TitleChange>747 828,00
+123,00</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">747828</LastValue>
+      <NewValue xsi:type="xsd:double">123</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T22:36:15.0512427+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Минимум</Title>
+      <TitleChange>123,00
+43,13</TitleChange>
+      <ID>2</ID>
+      <Property>Minimum</Property>
+      <LastValue xsi:type="xsd:double">123</LastValue>
+      <NewValue xsi:type="xsd:double">43.13</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T22:36:29.6417846+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Минимум</Title>
+      <TitleChange>43,13
+1 234,12</TitleChange>
+      <ID>2</ID>
+      <Property>Minimum</Property>
+      <LastValue xsi:type="xsd:double">43.13</LastValue>
+      <NewValue xsi:type="xsd:double">1234.12</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:06:07.301642+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>пиндюшка
+Запасы</Title>
+      <TitleChange>234,23
+2 344,23</TitleChange>
+      <ID>1</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">234.23</LastValue>
+      <NewValue xsi:type="xsd:double">2344.23</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:06:15.0388943+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>Амортизация
+Стоимость</Title>
+      <TitleChange>123,00
+1 213,00</TitleChange>
+      <ID>1</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">123</LastValue>
+      <NewValue xsi:type="xsd:double">1213</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:25.4589964+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>14</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">14</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:27.7382068+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>13</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">13</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:29.697435+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>11</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">11</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:32.0014384+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>9</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">9</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:34.0930871+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>8</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">8</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:35.9599814+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>7</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">7</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:37.1727041+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>10</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">10</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:38.238608+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>12</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">12</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:39.3285691+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>15</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">15</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:40.3175038+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>6</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">6</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:41.3210174+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>5</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">5</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:09:42.3584391+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>4</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">4</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:18.2118035+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>26</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">26</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:20.4489485+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>24</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">24</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:22.6574652+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>22</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">22</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:25.4729333+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>20</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">20</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:27.9943705+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>19</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">19</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:30.311157+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>18</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">18</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:31.34721+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>21</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">21</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:32.5386609+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>23</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">23</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:33.5818335+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>25</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">25</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:34.5943743+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>27</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">27</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:35.5773919+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>17</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">17</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-10T23:11:37.3509223+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>Товар
+</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>16</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">16</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T13:59:04.4095033+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>товар в миллилитрах
+Е.И. Количества</Title>
+      <TitleChange>мл
+л</TitleChange>
+      <ID>29</ID>
+      <Property>UnitOfMimimumID</Property>
+      <LastValue xsi:type="xsd:long">9</LastValue>
+      <NewValue xsi:type="xsd:long">8</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T13:59:26.0672171+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>игрушка_2
+Минимум</Title>
+      <TitleChange>1 234,00
+234,00</TitleChange>
+      <ID>1</ID>
+      <Property>Minimum</Property>
+      <LastValue xsi:type="xsd:double">1234</LastValue>
+      <NewValue xsi:type="xsd:double">234</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T13:59:28.4605285+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Минимум</Title>
+      <TitleChange>1 234,12
+234,12</TitleChange>
+      <ID>2</ID>
+      <Property>Minimum</Property>
+      <LastValue xsi:type="xsd:double">1234.12</LastValue>
+      <NewValue xsi:type="xsd:double">234.12</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:01:10.6357523+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>товар в штуках
+Запасы</Title>
+      <TitleChange>20,00
+0,00</TitleChange>
+      <ID>30</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">20</LastValue>
+      <NewValue xsi:type="xsd:double">0</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:02:10.5315837+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>товар в литрах
+Целочисленность</Title>
+      <TitleChange>Да
+Не указано</TitleChange>
+      <ID>28</ID>
+      <Property>IsInteger</Property>
+      <LastValue xsi:type="xsd:boolean">true</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:02:10.7347816+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>товар в литрах
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>28</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:02:11.6995722+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>товар в миллилитрах
+Целочисленность</Title>
+      <TitleChange>Да
+Не указано</TitleChange>
+      <ID>29</ID>
+      <Property>IsInteger</Property>
+      <LastValue xsi:type="xsd:boolean">true</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:02:11.8392345+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>товар в миллилитрах
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>29</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:19:20.9783754+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>доход
+Амортизация</Title>
+      <TitleChange>Удален</TitleChange>
+      <ID>1</ID>
+      <Property />
+      <LastValue xsi:type="xsd:long">1</LastValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:19:27.9471251+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>
+Название</Title>
+      <TitleChange>
+амортизация</TitleChange>
+      <ID>3</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">амортизация</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:19:33.8892973+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>амортизация
+Стоимость</Title>
+      <TitleChange>
+1 234,13</TitleChange>
+      <ID>3</ID>
+      <Property>Price</Property>
+      <NewValue xsi:type="xsd:double">1234.13</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:36:08.8535595+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>амортизация
+Стоимость</Title>
+      <TitleChange>101 284,13
+201 284,13</TitleChange>
+      <ID>3</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">101284.13</LastValue>
+      <NewValue xsi:type="xsd:double">201284.13</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:36:20.0594908+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>
+Название</Title>
+      <TitleChange>
+расходище</TitleChange>
+      <ID>4</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">расходище</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:36:23.5293085+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>расходище
+Стоимость</Title>
+      <TitleChange>
+123 000,00</TitleChange>
+      <ID>4</ID>
+      <Property>Price</Property>
+      <NewValue xsi:type="xsd:double">123000</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:36:25.3394986+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>расходище
+Снижает НБ</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>4</ID>
+      <Property>IsDecrease</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:36:55.8782155+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>игрушка_2
+Запасы</Title>
+      <TitleChange>223 453,00
+10,00</TitleChange>
+      <ID>1</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">223453</LastValue>
+      <NewValue xsi:type="xsd:double">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:36:59.4839923+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Запасы</Title>
+      <TitleChange>2 245,00
+1 005,00</TitleChange>
+      <ID>2</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">2245</LastValue>
+      <NewValue xsi:type="xsd:double">1005</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:37:03.7520794+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>маринушка
+Запасы</Title>
+      <TitleChange>1 230,00
+10,00</TitleChange>
+      <ID>3</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">1230</LastValue>
+      <NewValue xsi:type="xsd:double">10</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:37:07.6021709+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>товар в литрах
+Запасы</Title>
+      <TitleChange>1 234,00
+2,00</TitleChange>
+      <ID>28</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">1234</LastValue>
+      <NewValue xsi:type="xsd:double">2</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:37:19.8279441+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>пиндюшка
+Максимум</Title>
+      <TitleChange>24 322,00
+24 322,00</TitleChange>
+      <ID>1</ID>
+      <Property>Maximum</Property>
+      <LastValue xsi:type="xsd:double">24322</LastValue>
+      <NewValue xsi:type="xsd:double">24322</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:37:22.8799821+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>пиндюшка
+Запасы</Title>
+      <TitleChange>2 344,23
+44,23</TitleChange>
+      <ID>1</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">2344.23</LastValue>
+      <NewValue xsi:type="xsd:double">44.23</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:41:27.3234259+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>расходище
+Снижает НБ</Title>
+      <TitleChange>Не указано
+Да</TitleChange>
+      <ID>4</ID>
+      <Property>IsDecrease</Property>
+      <NewValue xsi:type="xsd:boolean">true</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:41:30.6930315+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>расходище
+Стоимость</Title>
+      <TitleChange>123 000,00
+103 000,00</TitleChange>
+      <ID>4</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">123000</LastValue>
+      <NewValue xsi:type="xsd:double">103000</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T14:45:34.5157494+03:00</DateTime>
+      <TypeOfItem>FixedCost</TypeOfItem>
+      <Title>расходище
+Стоимость</Title>
+      <TitleChange>103 000,00
+143 000,00</TitleChange>
+      <ID>4</ID>
+      <Property>Price</Property>
+      <LastValue xsi:type="xsd:double">103000</LastValue>
+      <NewValue xsi:type="xsd:double">143000</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T15:53:39.5894501+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Запасы</Title>
+      <TitleChange>5,00
+15,00</TitleChange>
+      <ID>2</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">5</LastValue>
+      <NewValue xsi:type="xsd:double">15</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-11T15:54:56.3818817+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>петрушка
+Запасы</Title>
+      <TitleChange>15,00
+1,00</TitleChange>
+      <ID>2</ID>
+      <Property>Stock</Property>
+      <LastValue xsi:type="xsd:double">15</LastValue>
+      <NewValue xsi:type="xsd:double">1</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-14T12:58:28.8766191+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+ресурсик</TitleChange>
+      <ID>3</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">ресурсик</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-14T12:58:33.2867294+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>ресурсик
+Стоимость</Title>
+      <TitleChange>
+123,00</TitleChange>
+      <ID>3</ID>
+      <Property>Price</Property>
+      <NewValue xsi:type="xsd:double">123</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-14T12:58:39.5861504+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>ресурсик
+Е.И. стоимости</Title>
+      <TitleChange>руб.
+тыс.руб.</TitleChange>
+      <ID>3</ID>
+      <Property>UnitOfPriceID</Property>
+      <LastValue xsi:type="xsd:long">11</LastValue>
+      <NewValue xsi:type="xsd:long">12</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-14T12:58:47.1825687+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>ресурсик
+Е.И. стоимости</Title>
+      <TitleChange>тыс.руб.
+руб.</TitleChange>
+      <ID>3</ID>
+      <Property>UnitOfPriceID</Property>
+      <LastValue xsi:type="xsd:long">12</LastValue>
+      <NewValue xsi:type="xsd:long">11</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-14T12:59:30.8994946+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>ресурсик
+Максимум</Title>
+      <TitleChange>
+1 234,00</TitleChange>
+      <ID>3</ID>
+      <Property>Maximum</Property>
+      <NewValue xsi:type="xsd:double">1234</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-14T12:59:34.3278084+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>ресурсик
+Целочисленность</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>3</ID>
+      <Property>IsInteger</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-14T12:59:34.3761995+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>ресурсик
+Запасы</Title>
+      <TitleChange>
+12,00</TitleChange>
+      <ID>3</ID>
+      <Property>Stock</Property>
+      <NewValue xsi:type="xsd:double">12</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-14T12:59:36.3601453+03:00</DateTime>
+      <TypeOfItem>Resource</TypeOfItem>
+      <Title>ресурсик
+Скоропорт</Title>
+      <TitleChange>Не указано
+Нет</TitleChange>
+      <ID>3</ID>
+      <Property>Perishable</Property>
+      <NewValue xsi:type="xsd:boolean">false</NewValue>
+      <GroupItems />
+    </HistoryItem>
+  </HistoryList>
+</History>

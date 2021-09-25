@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="Riscks.View.GistogramAnalys_Flexibility"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Riscks.View"
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             
+             mc:Ignorable="d" 
+             >
+    <Grid>
+        <DVC:Chart Title="{Binding Name}" Background="White" Style="{StaticResource TripleColumnChart_Style}">
+            <DVC:Chart.Palette>
+                <DV:ResourceDictionaryCollection>
+                    <ResourceDictionary>
+                        <SolidColorBrush x:Key="Background" Color="#B7C671"></SolidColorBrush>
+                    </ResourceDictionary>
+                    <ResourceDictionary>
+                        <SolidColorBrush x:Key="Background" Color="#4D99A6"></SolidColorBrush>
+                    </ResourceDictionary>
+                    <ResourceDictionary>
+                        <SolidColorBrush x:Key="Background" Color="#525F70"></SolidColorBrush>
+                    </ResourceDictionary>
+                </DV:ResourceDictionaryCollection>
+            </DVC:Chart.Palette>
+            <DVC:Chart.Series>
+                <local:ColumnSeries_Gistogram DependentValueBinding="{Binding Value}" IndependentValueBinding="{Binding Name}" ItemsSource="{Binding diagramm}" DataPointStyle="{StaticResource ColumnDataPointStyle_Gistogram}">
+                    <local:ColumnSeries_Gistogram.LegendItemStyle>
+                        <Style TargetType="DVC:LegendItem">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </Style>
+                    </local:ColumnSeries_Gistogram.LegendItemStyle>
+                    <DVC:ColumnSeries.LegendItems>
+                        <DVC:LegendItem Content="Прибыль до изменений" Style="{StaticResource LegendItemStyle_Gistogram}" Visibility="Visible" Background="#B7C671"/>
+                        <DVC:LegendItem Content="Прибыль после изменений" Style="{StaticResource LegendItemStyle_Gistogram}" Visibility="Visible" Background="#4D99A6"/>
+                        <DVC:LegendItem Content="Прибыль после периода окупаемости" Visibility="Visible" Style="{StaticResource LegendItemStyle_Gistogram}" Background="#525F70"/>
+
+                    </DVC:ColumnSeries.LegendItems>
+                    <DVC:ColumnSeries.DependentRangeAxis>
+                        <DVC:LinearAxis ShowGridLines="True" Title="{Binding AxisHeader}" Location="Left" Orientation="Y">
+                            <DVC:LinearAxis.GridLineStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="StrokeThickness" Value="1"/>
+                                    <Setter Property="SnapsToDevicePixels" Value="True"/>
+                                    <Setter Property="Stroke" Value="#D9D9D9"/>
+                                </Style>
+                            </DVC:LinearAxis.GridLineStyle>
+                            <DVC:LinearAxis.MajorTickMarkStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </Style>
+                            </DVC:LinearAxis.MajorTickMarkStyle>
+                            <DVC:LinearAxis.MinorTickMarkStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </Style>
+                            </DVC:LinearAxis.MinorTickMarkStyle>
+                            <DVC:LinearAxis.Style>
+                                <Style TargetType="DVC:LinearAxis">
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+                            </DVC:LinearAxis.Style>
+                            <DVC:LinearAxis.TitleStyle>
+                                <Style TargetType="DV:Title">
+                                    <Setter Property="Foreground" Value="#171717"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="FontFamily" Value="Calibri"/>
+                                    <Setter Property="Margin" Value="0 0 0 10"/>
+                                </Style>
+                            </DVC:LinearAxis.TitleStyle>
+                            <DVC:LinearAxis.AxisLabelStyle>
+                                <Style TargetType="DVC:AxisLabel">
+                                    <Setter Property="Foreground" Value="#171717"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="FontFamily" Value="Calibri"/>
+                                    <Setter Property="Margin" Value="0 0 10 0"/>
+                                    <Setter Property="StringFormat" Value="{}{0:N}"/>
+                                </Style>
+                            </DVC:LinearAxis.AxisLabelStyle>
+                        </DVC:LinearAxis>
+                    </DVC:ColumnSeries.DependentRangeAxis>
+                    <DVC:ColumnSeries.IndependentAxis>
+                        <DVC:CategoryAxis Orientation="X" Location="Bottom" >
+                            <DVC:CategoryAxis.AxisLabelStyle>
+                                <Style TargetType="DVC:AxisLabel">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Style>
+                            </DVC:CategoryAxis.AxisLabelStyle>
+                            <DVC:CategoryAxis.MajorTickMarkStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Style>
+                            </DVC:CategoryAxis.MajorTickMarkStyle>
+                            <DVC:CategoryAxis.Style>
+                                <Style TargetType="DVC:CategoryAxis">
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+                            </DVC:CategoryAxis.Style>
+                        </DVC:CategoryAxis>
+                    </DVC:ColumnSeries.IndependentAxis>
+                </local:ColumnSeries_Gistogram>
+            </DVC:Chart.Series>
+        </DVC:Chart>
+    </Grid>
+</UserControl>

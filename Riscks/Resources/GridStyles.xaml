@@ -1,0 +1,899 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Riscks.Resources"
+                    xmlns:Themes1="http://schemas.microsoft.com/wpf/2008/toolkit" 
+                    xmlns:convs ="clr-namespace:Riscks.Converters"
+                    xmlns:gl="clr-namespace:System.Globalization;assembly=mscorlib">
+
+
+    <convs:StringToNumberConverter x:Key="StrToNum"/>
+    <Style x:Key="TextBlock_Center" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="7 0"/>
+    </Style>
+
+    <Style x:Key="TextBlock_Right" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock_Center}">
+        <Setter Property="TextAlignment" Value="Right"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+
+    <Style x:Key="TextBlock_Left" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock_Center}">
+        <Setter Property="TextAlignment" Value="Left"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <Style x:Key="TextBox_Cell_Center" TargetType="{x:Type TextBox}">
+        <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="Foreground" Value="#171717"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="7 0"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="TextBox_Cell_Right" TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBox_Cell_Center}" >
+        <Setter Property="TextAlignment" Value="Right"/>
+    </Style>
+    
+    <Style x:Key="TextBox_Cell_Left" TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBox_Cell_Center}">
+        <Setter Property="TextAlignment" Value="Left"/>
+    </Style>
+
+
+    <ControlTemplate x:Key="MultiLevelHeader_1" TargetType="{x:Type DataGridColumnHeader}">
+         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="95*"></ColumnDefinition>
+                <ColumnDefinition Width="70*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"></RowDefinition>
+                <RowDefinition Height="29"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" BorderThickness="0.5 0 0.5 0" BorderBrush="#DEDEDE" >
+                <Grid Width="Auto" Background="Transparent"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <TextBlock Foreground="#2C2C2C" Style="{StaticResource TextBlock_Left}"  Text="НАИМЕНОВАНИЕ"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" BorderThickness="0.5 1 1 1" BorderBrush="#DEDEDE" >
+                <Grid Width="Auto" Background="Transparent"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <TextBlock Foreground="#2C2C2C"  Style="{StaticResource TextBlock_Left}"  Text="ПОЛНОЕ"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" BorderThickness="0 1 0.5 1" BorderBrush="#DEDEDE" >
+                <Grid Width="Auto" Background="Transparent"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <TextBlock Foreground="#2C2C2C"  Style="{StaticResource TextBlock_Center}"  Text="КРАТКОЕ"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="MultiLevelHeader_2" TargetType="{x:Type DataGridColumnHeader}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="50" Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="110*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"></RowDefinition>
+                <RowDefinition Height="29"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" BorderThickness="0.5 0 0.5 0" BorderBrush="#DEDEDE" >
+                <Grid Width="Auto" Background="Transparent"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Center}"  Text="ПРОПОРЦИЯ"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" BorderThickness="0.5 1 1 0" BorderBrush="#DEDEDE" >
+                <Grid Width="Auto" Background="Transparent"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Left}"  Text="БАЗИС"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" BorderThickness="0 1 0.5 0" BorderBrush="#DEDEDE" >
+                <Grid Width="Auto" Background="Transparent"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Center}"  Text="СООТНОШЕНИЕ"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="GridHeaderTemplate_Common" TargetType="{x:Type DataGridColumnHeader}">
+        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0.5 0 0.5 0" BorderBrush="#DEDEDE">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Right}" Text="{TemplateBinding Content}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="GridHeaderTemplate_Common_Multiline"  TargetType="{x:Type DataGridColumnHeader}">
+        <Border VerticalAlignment="Stretch" BorderThickness="0.5 0 0.5 0" BorderBrush="#DEDEDE">
+            <Grid Width="Auto"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock FontSize="14" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Right}" FontFamily="Calibri Light"  LineHeight="15" Text="{TemplateBinding Content}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="GridHeaderTemplate_Center_Multiline"  TargetType="{x:Type DataGridColumnHeader}">
+        <Border VerticalAlignment="Stretch" BorderThickness="0.5 0 0.5 0" BorderBrush="#DEDEDE">
+            <Grid Width="Auto"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock FontSize="14" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Center}" FontFamily="Calibri Light" LineHeight="15" Text="{TemplateBinding Content}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="GridHeaderTemplate_Left_Multiline"  TargetType="{x:Type DataGridColumnHeader}">
+        <Border VerticalAlignment="Stretch" BorderThickness="0 0 0.5 0" BorderBrush="#DEDEDE">
+            <Grid Width="Auto"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock FontSize="14" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Left}" FontFamily="Calibri Light" LineHeight="15" Text="{TemplateBinding Content}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="GridHeaderTemplate_First" TargetType="{x:Type DataGridColumnHeader}">
+        <Border HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" BorderThickness="0 0 0.5 0" BorderBrush="#DEDEDE" >
+            <Grid Width="Auto" Background="Transparent"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Left}"  Text="{TemplateBinding Content}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="GridHeaderTemplate_Center" TargetType="{x:Type DataGridColumnHeader}">
+        <Border VerticalAlignment="Stretch" BorderThickness="0.5 0 0.5 0"  BorderBrush="#DEDEDE">
+            <Grid Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Center}" Text="{TemplateBinding Content}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+    <ControlTemplate x:Key="GridHeaderTemplate_Center_WithoutBorders" TargetType="{x:Type DataGridColumnHeader}">
+        <Border VerticalAlignment="Stretch">
+            <Grid Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock TextAlignment="Center" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Center}" Text="{TemplateBinding Content}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="GridHeaderTemplate_Last" TargetType="{x:Type DataGridColumnHeader}">
+        <Border  BorderThickness="0.5 0 0 0" BorderBrush="#DEDEDE" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource TextBlock_Right}" Text="{TemplateBinding Content}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="DataGridCell_Rigth_Infinity">
+        <Border FocusManager.FocusedElement="{Binding ElementName=tb}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="tb" Grid.Column="0" Style="{StaticResource TextBox_Cell_Right}" Text="{Binding Content.Maximum, Converter={StaticResource StrToNum},StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}, UpdateSourceTrigger=LostFocus}"/>
+                <Button Grid.Column="1" HorizontalAlignment="Right" Command="{Binding Content.SetInfinityCommand, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}, Mode=TwoWay}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="bd" Background="#cecece"  BorderBrush="#bebebe" BorderThickness="1">
+                                <TextBlock FontFamily="Calibri" FontSize="15" Text="&#x221E;" Margin="5 3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#bebebe"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#b0b0b0"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext.Maximum, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_Left">
+
+        <Border FocusManager.FocusedElement="{Binding ElementName=tb}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" >
+            <Grid >
+                <TextBox TextAlignment="Left" CaretIndex="0" Width="Auto"  x:Name="tb" Style="{StaticResource TextBox_Cell_Left}" Text="{Binding Content, Converter={StaticResource StrToNum},StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}, UpdateSourceTrigger=LostFocus}">
+                    
+                </TextBox>
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+                    
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+        <DataTemplate.Triggers>
+        <Trigger Property="IsMouseOver" Value="True">
+            <Setter TargetName="toolTip" Property="Visibility" Value="Visible"/>
+        </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_NumberWithUnit">
+        <Border VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox BorderThickness="0 0 1 0" BorderBrush="Gray" Style="{StaticResource TextBox_Cell_Left}" Text="{Binding Number, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+                <TextBox Style="{StaticResource TextBox_Cell_Left}" Text="{Binding UnitSymbol, Mode=OneWay}"/>
+
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_NameWithCheckBox">
+        <Border FocusManager.FocusedElement="{Binding ElementName=cb}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" >
+            <Grid>
+                <CheckBox x:Name="cb" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsUsing, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_Center">
+        <Border FocusManager.FocusedElement="{Binding ElementName=tb}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" >
+            <Grid>
+                <TextBox x:Name="tb" Style="{StaticResource TextBox_Cell_Center}" Text="{Binding Content, Converter={StaticResource StrToNum},StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}, UpdateSourceTrigger=LostFocus}"/>
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_Right">
+        <Border FocusManager.FocusedElement="{Binding ElementName=tb}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+            <Grid>
+                <TextBox x:Name="tb" Style="{StaticResource TextBox_Cell_Right}" Text="{Binding Content, Converter={StaticResource StrToNum}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture},  Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}, UpdateSourceTrigger=LostFocus}" >
+                    
+                </TextBox>
+
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_Right_Gray">
+        <Border FocusManager.FocusedElement="{Binding ElementName=tb}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#F7F2F9">
+            <Grid>
+                <TextBox x:Name="tb" Style="{StaticResource TextBox_Cell_Right}" Text="{Binding Content, Converter={StaticResource StrToNum},StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}, UpdateSourceTrigger=LostFocus}" />
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_Right_big">
+        <Border FocusManager.FocusedElement="{Binding ElementName=tb}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+            <Grid>
+                <TextBox x:Name="tb" Style="{StaticResource TextBox_Cell_Right}"  MaxWidth="{x:Static local:WindowConstants.MaxColumnWidth_Commentary}" Text="{Binding Content, Converter={StaticResource StrToNum},StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}}" />
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_UnEditable_Right">
+        <Border VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+            <Grid>
+                <TextBlock Style="{StaticResource TextBlock_Right}" Foreground="#171717" Text="{Binding Content,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}}" />
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_UnEditable_Center">
+        <Border VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+            <Grid>
+                <TextBlock Style="{StaticResource TextBlock_Center}"  Foreground="#171717" Text="{Binding Content,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}}" />
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_UnEditable_Image">
+        <Border VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+            <Grid>
+                <Image Source="{Binding Content, Converter={StaticResource FromDoubleToImageConverter}, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}}" />
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_UnEditable_Left">
+        <Border VerticalAlignment="Stretch" Background="Transparent" HorizontalAlignment="Stretch" >
+            <Grid>
+                <TextBlock Style="{StaticResource TextBlock_Left}"  Foreground="#171717" Text="{Binding Content,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}}" />
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_UnEditable_Center_Top">
+        <Border VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid  VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" VerticalAlignment="Center" Style="{StaticResource TextBlock_Left}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}}" Text="{Binding Content,StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}}}" />
+            </Grid>
+            <Border.ToolTip>
+                <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Placement="MousePoint" x:Name="toolTip" Width="Auto" FontSize="15" FontFamily="Calibri" VerticalAlignment="Center">
+
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataGridCell_UnEditable_HistoryParam">
+        <Border VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Style="{StaticResource TextBlock_Left}" FontWeight="SemiBold" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}}" Text="{Binding TitleBold, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" />
+                <TextBlock Grid.Row="1" Style="{StaticResource TextBlock_Left}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}}" Text="{Binding TitleNoBold, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"/>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+
+    <DataTemplate x:Key="MultiLevelCell_1">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="95*"></ColumnDefinition>
+                <ColumnDefinition Width="70*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox BorderThickness="0 0 1 0" BorderBrush="#ECE8F0" Text="{Binding FullName, UpdateSourceTrigger=LostFocus}" Grid.Column="0" Style="{StaticResource TextBox_Cell_Left}"></TextBox>
+            <TextBox  Grid.Column="1" Text="{Binding Symbol, UpdateSourceTrigger=LostFocus}" Style="{StaticResource TextBox_Cell_Left}"/>
+            
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MultiLevelCell_2">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="110*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderThickness="0 0 1 0" BorderBrush="#ECE8F0">
+                <RadioButton Template="{DynamicResource RadioButtonControlTemplate1}" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="{Binding IsBasis, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+            </Border>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox BorderThickness="0 0 1 0" Style="{StaticResource TextBox_Cell_Right}" BorderBrush="#ECE8F0" Grid.Column="0" Text="{Binding Number, UpdateSourceTrigger=LostFocus}"/>
+                <TextBlock Grid.Column="1" Style="{StaticResource TextBlock_Center}" Text="{Binding BasisSymbol}"/>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <Style x:Key="GridHeaderStyle" TargetType="{x:Type DataGridColumnHeader}" >
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="SeparatorBrush" Value="White"/>
+        <Setter Property="SeparatorVisibility" Value="Visible"/>
+    </Style>
+
+    <Style x:Key="RowStyle" TargetType="{x:Type DataGridRow}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Height" Value="29"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="BorderBrush" Value="#ECE8F0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridRow}">
+                    <Border 
+                        x:Name="DGR_Border"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Height="{TemplateBinding Height}"
+                        Margin="0 0 0 0"
+                        Background="#FFFFFF"
+                        SnapsToDevicePixels="True"
+                        CornerRadius="0">
+                        <SelectiveScrollingGrid>
+                            <DataGridCellsPresenter ItemsPanel="{TemplateBinding ItemsPanel}"
+                                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </SelectiveScrollingGrid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsFixedLine}" Value="True">
+                            <Setter TargetName="DGR_Border" Property="Background" Value="#88fbead0"/>
+                        </DataTrigger>
+                        <Trigger Property="IsMouseOver"
+                             Value="True">
+                            <Setter TargetName="DGR_Border"
+                                Property="Background"
+                                Value="#8ff9f4fd" />
+                            <Setter TargetName="DGR_Border" Property="BorderBrush" Value="#f9f4fd"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected"
+                             Value="True">
+                            <Setter TargetName="DGR_Border"
+                                Property="Background"
+                                Value="#f9f4fd" />
+                            <Setter TargetName="DGR_Border" Property="BorderBrush" Value="#f9f4fd"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter TargetName="DGR_Border" Property="BorderBrush" Value="#ECE8F0"/>
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}}" Value="True" />
+                                <Condition Binding="{Binding IsKeyboardFocusWithin, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}, Mode=FindAncestor}}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="DGR_Border"
+                                Property="Background"
+                                Value="#f9f4fd" />
+                            <Setter TargetName="DGR_Border" Property="BorderBrush" Value="#f9f4fd"/>
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--
+    <Style x:Key="DataGridCellStyle_First" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Border VerticalAlignment="Stretch" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="0 0 0 0" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="#bed258"/>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="BorderBrush" Value="#bed258"/>
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="true"/>
+                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="#bed258"/>
+            </MultiTrigger>
+            <Trigger Property="IsEnabled" Value="false"/>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DataGridCellStyle_Common" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Border VerticalAlignment="Stretch" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="0" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="#bed258"/>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="BorderBrush" Value="#bed258"/>
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="true"/>
+                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="#bed258"/>
+            </MultiTrigger>
+            <Trigger Property="IsEnabled" Value="false"/>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DataGridCellStyle_Last" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Border VerticalAlignment="Stretch" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="0 0 0 0" BorderThickness="1" Background="Transparent" SnapsToDevicePixels="True">
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+-->
+
+    <ControlTemplate x:Key="DataGridControlTemplate" TargetType="{x:Type DataGrid}">
+        <Border Background="#ffffff" Padding="0" CornerRadius="3" SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Row="0" Grid.Column="1" Background="Transparent" x:Name="DG_ScrollViewer" Focusable="False">
+                    <ScrollViewer.Template>
+                        <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Border Height="24" Margin="0 0 0 1" Grid.Row="0" Panel.ZIndex="-1" Grid.Column="0" MinHeight="3" HorizontalAlignment="Stretch" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" CornerRadius="0 0 0 0">
+                                    <DataGridColumnHeadersPresenter Height="Auto" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" x:Name="PART_DataGridColumnHeadersPresenter">
+
+                                    </DataGridColumnHeadersPresenter>
+                                </Border>
+                                <Border Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+                                    <ScrollContentPresenter  Margin="0" x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False"  CanVerticallyScroll="True" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" />
+                                </Border>
+                                <Border Grid.Column="1" Panel.ZIndex="-1" Grid.Row="0" Grid.RowSpan="3" Margin="1 0 0 0" Width="5" Padding="0 25 0 5" VerticalAlignment="Stretch" CornerRadius="0 3 3 0"  BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                                    <ScrollBar  MaxWidth="5" MinWidth="5" Width="5" x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Template="{StaticResource ScrollBarControlTemplate_Gray}"/>
+                                </Border>
+                                <Border Height="3" Margin="0 1 0 0" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" Grid.Row="2" Grid.Column="0"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </ScrollViewer.Template>
+                    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                </ScrollViewer>
+                <Border Margin="0 0 1 0" VerticalAlignment="Stretch" Width="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3 0 0 3" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+
+
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+
+    <ControlTemplate x:Key="DataGridControlTemplate_Inside" TargetType="{x:Type DataGrid}">
+        <Border Background="#ffffff" Padding="0" SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Row="0" Grid.Column="1" Background="Transparent" x:Name="DG_ScrollViewer" Focusable="False">
+                    <ScrollViewer.Template>
+                        <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Border Height="24" Margin="0 0 0 1" Grid.Row="0" Panel.ZIndex="-1" Grid.Column="0" MinHeight="3" HorizontalAlignment="Stretch" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" CornerRadius="0 0 0 0">
+                                    <DataGridColumnHeadersPresenter Height="Auto" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" x:Name="PART_DataGridColumnHeadersPresenter">
+            
+                                    </DataGridColumnHeadersPresenter>
+                                </Border>
+                                <Border Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+                                    <ScrollContentPresenter  Margin="0" x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False"  CanVerticallyScroll="True" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" />
+                                </Border>
+                                <Border Grid.Column="1" Panel.ZIndex="-1" Grid.Row="0" Grid.RowSpan="3"  Width="0" VerticalAlignment="Stretch"   Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                                    <ScrollBar  MaxWidth="0" MinWidth="0" Width="0" x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Template="{StaticResource ScrollBarControlTemplate_Gray}"/>
+                                </Border>
+                            </Grid>
+                        </ControlTemplate>
+                    </ScrollViewer.Template>
+                    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                </ScrollViewer>              
+
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="DataGridControlTemplate_HighHeader" TargetType="{x:Type DataGrid}">
+        <Border Background="#ffffff" Padding="0" CornerRadius="3" SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Row="0" Grid.Column="1" Background="Transparent" x:Name="DG_ScrollViewer" Focusable="False">
+                    <ScrollViewer.Template>
+                        <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Border Height="36" Margin="0 0 0 1" Grid.Row="0" Panel.ZIndex="-1" Grid.Column="0" MinHeight="3" HorizontalAlignment="Stretch" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" CornerRadius="0 0 0 0">
+                                    <DataGridColumnHeadersPresenter Height="Auto" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" x:Name="PART_DataGridColumnHeadersPresenter">
+
+                                    </DataGridColumnHeadersPresenter>
+                                </Border>
+                                <Border Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+                                    <ScrollContentPresenter  Margin="0" x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False"  CanVerticallyScroll="True" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" />
+                                </Border>
+                                <Border Grid.Column="1" Panel.ZIndex="-1" Grid.Row="0" Grid.RowSpan="3" Margin="1 0 0 0" Width="5" Padding="0 36 0 4" VerticalAlignment="Stretch" CornerRadius="0 3 3 0"  BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                                    <ScrollBar  MaxWidth="5" MinWidth="5" Width="5" x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Template="{StaticResource ScrollBarControlTemplate_Gray}"/>
+                                </Border>
+                                <Border Height="3" Margin="0 1 0 0" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" Grid.Row="2" Grid.Column="0"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </ScrollViewer.Template>
+                    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                </ScrollViewer>
+                <Border Margin="0 0 1 0" VerticalAlignment="Stretch" Width="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3 0 0 3" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+
+
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="DataGridControlTemplate_MultiLevel" TargetType="{x:Type DataGrid}">
+        <Border Background="#ffffff" Padding="0" CornerRadius="3" SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Row="0" Grid.Column="1" Background="Transparent" x:Name="DG_ScrollViewer" Focusable="False">
+                    <ScrollViewer.Template>
+                        <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Border Height="65" Margin="0 0 0 1" Grid.Row="0" Panel.ZIndex="-1" Grid.Column="0" MinHeight="3" HorizontalAlignment="Stretch" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" CornerRadius="0 0 0 0">
+                                    <DataGridColumnHeadersPresenter Height="Auto" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" x:Name="PART_DataGridColumnHeadersPresenter">
+
+                                    </DataGridColumnHeadersPresenter>
+                                </Border>
+                                <Border Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+                                    <ScrollContentPresenter  Margin="0" x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False"  CanVerticallyScroll="True" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" />
+                                </Border>
+                                <Border Grid.Column="1" Panel.ZIndex="-1" Grid.Row="0" Grid.RowSpan="3" Margin="1 0 0 0" Width="5" Padding="0 36 0 4" VerticalAlignment="Stretch" CornerRadius="0 3 3 0"  BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                                    <ScrollBar  MaxWidth="5" MinWidth="5" Width="5" x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Template="{StaticResource ScrollBarControlTemplate_Gray}"/>
+                                </Border>
+                                <Border Height="3" Margin="0 1 0 0" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" Grid.Row="2" Grid.Column="0"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </ScrollViewer.Template>
+                    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                </ScrollViewer>
+                <Border Margin="0 0 1 0" VerticalAlignment="Stretch" Width="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3 0 0 3" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+
+
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+
+    <ControlTemplate x:Key="DataGridControlTemplate_WithoutColumns" TargetType="{x:Type DataGrid}">
+        <Border Background="#ffffff" Padding="0" CornerRadius="3" SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Row="0" Grid.Column="1" Background="Transparent" x:Name="DG_ScrollViewer" Focusable="False">
+                    <ScrollViewer.Template>
+                        <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Border Margin="0 0 0 1" Grid.Row="0" Panel.ZIndex="-1" Grid.Column="0" MinHeight="3" HorizontalAlignment="Stretch" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" CornerRadius="0 0 0 0">
+                                    <DataGridColumnHeadersPresenter Height="0" Visibility="Collapsed" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGrid}}" x:Name="PART_DataGridColumnHeadersPresenter">
+  
+                                    </DataGridColumnHeadersPresenter>
+                                </Border>
+                                <Border Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+                                    <ScrollContentPresenter  Margin="0" x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False"  CanVerticallyScroll="True" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" />
+                                </Border>
+                                <Border Grid.Column="1" Panel.ZIndex="-1" Grid.Row="0" Grid.RowSpan="3" Margin="1 0 0 0" Width="5" VerticalAlignment="Stretch" CornerRadius="0 3 3 0"  BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                                    <ScrollBar Orientation="Vertical" Panel.ZIndex="1" Margin="0 25 0 5" MaxWidth="5" Width="5" Maximum="{TemplateBinding ScrollableHeight}" Visibility="Visible" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Template="{StaticResource ScrollBarControlTemplate_Gray}" MinWidth="3"/>
+                                </Border>
+                                <Border Height="3" Margin="0 1 0 0" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource AncestorType=DataGrid}}" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" Grid.Row="2" Grid.Column="0"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </ScrollViewer.Template>
+                    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                </ScrollViewer>
+                <Border Margin="0 0 1 0" VerticalAlignment="Stretch" Width="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3 0 0 3" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+
+
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+
+
+    <Style x:Key="GridCellStyle" TargetType="DataGridCell">
+        <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridCell">
+                    <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="ColumnHeaderStyle" Value="{StaticResource GridHeaderStyle}"/>
+        <Setter Property="CellStyle" Value="{StaticResource GridCellStyle}"/>
+        <Setter Property="GridLinesVisibility" Value="All"/>
+        <Setter Property="HeadersVisibility" Value="Column"/>
+        <Setter Property="Background" Value="#887F8C" />
+        <Setter Property="VerticalGridLinesBrush" Value="#DEDEDE" />
+        <Setter Property="HorizontalGridLinesBrush" Value="#DEDEDE"/>
+        <Setter Property="BorderBrush" Value="#978E9A"/>
+        <Setter Property="Template" Value="{StaticResource DataGridControlTemplate}"/>
+        <Setter Property="RowStyle" Value="{StaticResource RowStyle}"/>
+        <Setter Property="VirtualizingPanel.ScrollUnit" Value="Pixel"/>
+        <Setter Property="SelectionUnit" Value="FullRow"/>
+        <Setter Property="CanUserReorderColumns" Value="False"/>
+        <Setter Property="HeadersVisibility" Value="Column"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="True"/>
+        <Setter Property="Foreground" Value="#F7F2F5"/>
+        <Setter Property="KeyboardNavigation.AcceptsReturn" Value="True"/>        
+    </Style>
+
+    
+    <Style x:Key="GridStyle_Bottom" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource GridStyle}">
+        <Setter Property="Background" Value="#C0B7C3"/>
+        <Setter Property="BorderBrush" Value="#B7ADBA"/>
+        <Setter Property="Foreground" Value="#2C2C2C"/>        
+    </Style>
+
+    <Style x:Key="GridStyle_Bottom_Inside" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource GridStyle}">
+        <Setter Property="Background" Value="#C0B7C3"/>
+        <Setter Property="BorderBrush" Value="#B7ADBA"/>
+        <Setter Property="Foreground" Value="#2C2C2C"/>
+
+        <Setter Property="Template" Value="{StaticResource DataGridControlTemplate_Inside}"/>
+    </Style>
+
+
+    <Style x:Key="GridStyle_HighHeader" TargetType="DataGrid" BasedOn="{StaticResource GridStyle}">
+        <Setter Property="Template" Value="{StaticResource DataGridControlTemplate_HighHeader}"/>
+    </Style>
+
+    <Style x:Key="GridStyle_MultiLevel" TargetType="DataGrid" BasedOn="{StaticResource GridStyle_Bottom}">
+        <Setter Property="Template" Value="{StaticResource DataGridControlTemplate_MultiLevel}"/>
+    </Style>
+
+    <Style x:Key="RowStyle_History" TargetType="DataGridRow" BasedOn="{StaticResource RowStyle }">
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="GridStyle_History" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource GridStyle_Bottom}">
+        <Setter Property="GridLinesVisibility" Value="None"/>
+        <Setter Property="RowStyle" Value="{StaticResource RowStyle_History}"/>
+    </Style>
+
+    <Style x:Key="GridStyle_WithoutColumns" TargetType="DataGrid" BasedOn="{StaticResource GridStyle}">
+        <Setter Property="Template" Value="{StaticResource DataGridControlTemplate_WithoutColumns}"/>
+        <Setter Property="Foreground" Value="#141414"/>
+    </Style>
+
+
+</ResourceDictionary>

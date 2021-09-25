@@ -1,0 +1,713 @@
+﻿<UserControl x:Class="Riscks.View.AnalysView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:ViewModel="clr-namespace:Riscks.ViewModel"
+             xmlns:local="clr-namespace:Riscks.View"
+             xmlns:Resources="clr-namespace:Riscks.Resources"
+             xmlns:gl="clr-namespace:System.Globalization;assembly=mscorlib"
+             mc:Ignorable="d" 
+              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataContextChanged="UserControl_DataContextChanged" >
+    <Grid  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.71*" ></ColumnDefinition>
+            <ColumnDefinition MinWidth="365" MaxWidth="546" Width="0.29*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="400*"></RowDefinition>
+            <RowDefinition Height="265*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" >
+            <Grid.Margin>
+                <Thickness  Right="{x:Static Resources:WindowConstants.Margin}"/>
+            </Grid.Margin>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label VerticalAlignment="Bottom" Grid.Row="0"  ContentStringFormat="КАРТА СЦЕНАРИЕВ" Template="{StaticResource TableTitle}"></Label>
+            <Button Command="{Binding OpenGraphicCommand}" Grid.Row="0"  ContentStringFormat="Обновить" Template="{StaticResource TableButton_Top_Gray}" HorizontalAlignment="Right"></Button>
+            <Border Grid.Row="1" Grid.Column="0" Padding="10" Background="White" BorderThickness="4" BorderBrush="#B3A9B6" CornerRadius="3">
+            <DVC:Chart  Style="{StaticResource ChartStyle1}" x:Name="chart" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+            <DVC:Chart.Series>
+
+                        <local:ScatterSeries_Custom Visibility="{Binding adviceVis}" Background="#d39dbf" LegendItemStyle="{StaticResource LegendItemStyle_ScatterSeries}" x:Name="AdvicedSeries" Title="Рекомендуемый сценарий" ItemsSource="{Binding adviced_graphic.Points, Mode=OneWay}" SelectedItem="{Binding adviced_graphic.CurrentPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSelectionEnabled="True" IndependentValueBinding="{Binding X,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" DependentValueBinding="{Binding Y,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}">
+                   
+                            <DVC:DataPointSeries.DataPointStyle>
+                                <Style TargetType="DVC:ScatterDataPoint">
+                                        <Setter Property="Width" Value="Auto"></Setter>
+                                        <Setter Property="Height" Value="Auto"/>
+                                        <Setter Property="IsSelectionEnabled" Value="True"/>
+                                        <Setter Property="Background" Value="#d39dbf"/>
+                                        <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate>
+                                                <Border BorderThickness="1 0 1 0" BorderBrush="#FEF5F0">
+                                                    <Rectangle x:Name="rect" Width="3" Fill="#F6E3DC" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" Stroke="#E3D5BA" StrokeThickness="1"  VerticalAlignment="Stretch" >
+
+                                                    </Rectangle>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                        <Setter TargetName="rect" Property="Fill" Value="#ddffffff"/>
+                                                        <Setter TargetName="rect" Property="Stroke" Value="#ddffffff"/>
+                                                    </DataTrigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DVC:DataPointSeries.DataPointStyle>
+                </local:ScatterSeries_Custom>
+
+                   <local:ScatterSeries_Custom x:Name="HelpSeries" ItemsSource="{Binding main_graphic.Points, Mode=OneWay}" SelectedItem="{Binding main_graphic.CurrentPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSelectionEnabled="True" IndependentValueBinding="{Binding Path=X}" DependentValueBinding="{Binding Path=Y}">
+                    <DVC:ScatterSeries.LegendItemStyle>
+                        <Style TargetType="DVC:LegendItem">
+                            <Setter Property="Visibility" Value="Hidden"/>
+                        </Style>
+                            </DVC:ScatterSeries.LegendItemStyle>
+                            <DVC:ScatterSeries.DataPointStyle>
+                                <Style TargetType="DVC:ScatterDataPoint">
+                                    <Setter Property="Width" Value="Auto"></Setter>
+                                    <Setter Property="Height" Value="Auto"/>
+                                    <Setter Property="IsSelectionEnabled" Value="True"/>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="DVC:ScatterDataPoint">
+                                                <Border x:Name="bd" Visibility="Hidden" Width="5" BorderThickness="1 0 1 0" BorderBrush="#aaEAE5EC">
+                                                    <Rectangle x:Name="rect" Visibility="Hidden" StrokeThickness="1" Stroke="#aa857D8C"  Fill="#CAA6C0" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" Width="5" VerticalAlignment="Stretch" ></Rectangle>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                        <Setter Property="Visibility" TargetName="bd" Value="Visible"/>
+                                                        <Setter Property="Visibility" TargetName="rect" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DVC:ScatterSeries.DataPointStyle>
+                        </local:ScatterSeries_Custom>
+
+                        <local:LineSeries_Custom Visibility="{Binding bestVis}" LegendItemStyle="{StaticResource LegendItemStyle_LineSeries}" Background="#6ebb55" x:Name="BestSeries" Title="Чистая прибыль в случае успеха" ItemsSource="{Binding main_graphic.Points, Mode=OneWay}" SelectedItem="{Binding main_graphic.CurrentPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSelectionEnabled="True" IndependentValueBinding="{Binding X,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" DependentValueBinding="{Binding Y,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}">
+                            <local:LineSeries_Custom.DataPointStyle>
+                        <Style TargetType="DVC:LineDataPoint">
+                            <Setter Property="Background" Value="#A4B25D"></Setter>
+                                    <Setter Property="IsSelectionEnabled" Value="True"/>
+                            
+                                    <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="DVC:LineDataPoint">
+                                                <Grid>
+                                                <Canvas Margin="-2 -2 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                    <Ellipse x:Name="rect" Height="9" Width="9" StrokeThickness="2" Stroke="#aaFDFCF8" Fill="#A4B25D"/>
+                                                </Canvas>
+                                                    <Grid Width="100" Height="30" x:Name="toolTip" Visibility="Hidden" Margin="5 -30 -100 0" VerticalAlignment="Top" HorizontalAlignment="Right">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Path Panel.ZIndex="11" Grid.Column="0" SnapsToDevicePixels="True" Height="27" Width="Auto" Fill="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" StrokeThickness="1" Stroke="#A4B25D" Data="M6,0 L5,0 L5,17 L0,27 L5,22 L6,22">
+                                                        </Path>
+                                                        <Border Panel.ZIndex="10" Grid.Column="1" Background="White" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="Auto" BorderBrush="#A4B25D" Height="22" Margin="0 0 0 5" BorderThickness="0 1 1 1">
+                                                            <TextBlock HorizontalAlignment="Center" Background="White" VerticalAlignment="Center" Text="{Binding Y, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Height="18" TextAlignment="Center" Margin="7 2" FontSize="15" FontFamily="Calibri"></TextBlock>
+                                                        </Border>
+                                                    </Grid>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                        <Setter TargetName="rect" Property="Height" Value="13"/>
+                                                        <Setter TargetName="rect" Property="Width" Value="13"/>
+                                                        <Setter TargetName="toolTip" Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsRecomended}" Value="True">
+                                                        <Setter TargetName="rect" Property="Stroke" Value="#A4B25D"/>
+                                                        <Setter TargetName="rect" Property="Fill" Value="#FDFCF8"/>
+                                                        <Setter TargetName="rect" Property="Height" Value="11"/>
+                                                        <Setter TargetName="rect" Property="Width" Value="11"/>
+                                                    </DataTrigger>
+                                                </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </local:LineSeries_Custom.DataPointStyle>
+
+                </local:LineSeries_Custom>
+
+                        
+                        <local:LineSeries_Custom Visibility="{Binding perishVis}" BorderThickness="0" Background="#debe51" LegendItemStyle="{StaticResource LegendItemStyle_LineSeries}" x:Name="PerishSeries" Title="Гарантированная чистая прибыль с учетом запасов" IsSelectionEnabled="True" SelectedItem="{Binding per_graphic.CurrentPoint,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding per_graphic.Points, Mode=OneWay}" IndependentValueBinding="{Binding X, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" DependentValueBinding="{Binding Y,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}">
+                            <local:LineSeries_Custom.DataPointStyle>
+                        <Style TargetType="DVC:LineDataPoint">
+                                    <Setter Property="Background" Value="#F3AF68"></Setter>
+                                    <Setter Property="IsSelectionEnabled" Value="True"/>
+                                    <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                                <Grid>
+                                            <Canvas Margin="-2 -2 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                    <Ellipse x:Name="rect" Width="9" Height="9" StrokeThickness="2" Stroke="#aaFDFCF8" Fill="{TemplateBinding Background}"/>
+                                                </Canvas>
+                                                <Grid Width="100" Height="30" x:Name="toolTip" Visibility="Hidden" Margin="5 -30 -100 0" VerticalAlignment="Top" HorizontalAlignment="Right">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                        <Path Panel.ZIndex="11" Grid.Column="0" SnapsToDevicePixels="True" Height="27" Width="Auto" Fill="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" StrokeThickness="1" Stroke="{TemplateBinding Background}" Data="M6,0 L5,0 L5,17 L0,27 L5,22 L6,22">
+                                                        </Path>
+                                                        <Border Panel.ZIndex="10" Grid.Column="1" Background="White" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="Auto" BorderBrush="{TemplateBinding Background}" Height="22" Margin="0 0 0 5" BorderThickness="0 1 1 1">
+                                                            <TextBlock HorizontalAlignment="Center" Background="White" VerticalAlignment="Center" Text="{Binding Y,  ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Height="18" TextAlignment="Center" Margin="7 2" FontSize="15" FontFamily="Calibri"></TextBlock>
+                                                        </Border>
+                                                    </Grid>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                        <Setter TargetName="rect" Property="Height" Value="13"/>
+                                                        <Setter TargetName="rect" Property="Width" Value="13"/>
+                                                        <Setter TargetName="toolTip" Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsRecomended}" Value="True">
+                                                        <Setter TargetName="rect" Property="Fill" Value="#FDFCF8"/>
+                                                        <Setter TargetName="rect" Property="Stroke" Value="#F3AF68"/>
+                                                        <Setter TargetName="rect" Property="Height" Value="11"/>
+                                                        <Setter TargetName="rect" Property="Width" Value="11"/>
+                                                    </DataTrigger>
+                                                </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                    </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </local:LineSeries_Custom.DataPointStyle>
+
+                </local:LineSeries_Custom>
+                        <local:LineSeries_Custom Visibility="{Binding badVis}" LegendItemStyle="{StaticResource LegendItemStyle_LineSeries}" Background="#eb5c4a" x:Name="BadSeries" Title="Гарантированная чистая прибыль" ItemsSource="{Binding bad_graphic.Points, Mode=OneWay}" SelectedItem="{Binding bad_graphic.CurrentPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSelectionEnabled="True" IndependentValueBinding="{Binding X,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" DependentValueBinding="{Binding Y,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}">
+
+                            <local:LineSeries_Custom.DataPointStyle>
+                                <Style TargetType="DVC:LineDataPoint">
+                                    <Setter Property="Background" Value="#E1686D"></Setter>
+                                    <Setter Property="IsSelectionEnabled" Value="True"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="DVC:LineDataPoint">
+                                                <Grid>
+                                                    <Canvas Panel.ZIndex="10" Margin="-2 -2 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                        <Ellipse Panel.ZIndex="10" x:Name="rect" Width="9" StrokeThickness="2" Height="9" Stroke="#aaFDFCF8" Fill="#E1686D"></Ellipse>
+                                                    </Canvas>
+                                                    <Grid Width="100" Height="30" x:Name="toolTip" Visibility="Hidden" Margin="5 0 -100 -30" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Path Panel.ZIndex="16" Grid.Column="0" SnapsToDevicePixels="True" Height="27" Width="Auto" Fill="White" HorizontalAlignment="Left" VerticalAlignment="Top" StrokeThickness="1" Stroke="{TemplateBinding Background}" Data="M6,5 L5,5 L0,0 L5,10 L5,27 L6,27">
+                                                        </Path>
+                                                        <Border Panel.ZIndex="15" Grid.Column="1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" BorderBrush="{TemplateBinding Background}" Height="22" Margin="0 5 0 0" BorderThickness="0 1 1 1">
+                                                            <TextBlock  HorizontalAlignment="Center" Background="White" VerticalAlignment="Center" Text="{Binding Y,  ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Height="18" TextAlignment="Center" Margin="7 2" FontSize="15" FontFamily="Calibri"></TextBlock>
+                                                        </Border>
+                                                    </Grid>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                        <Setter TargetName="toolTip" Property="Visibility" Value="Visible"/>
+                                                        <Setter TargetName="rect" Property="Height" Value="13"/>
+                                                        <Setter TargetName="rect" Property="Width" Value="13"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsRecomended}" Value="True">
+                                                        <Setter TargetName="rect" Property="Fill" Value="#FDFCF8"/>
+                                                        <Setter TargetName="rect" Property="Stroke" Value="#E1686D"/>
+                                                        <Setter TargetName="rect" Property="Height" Value="11"/>
+                                                        <Setter TargetName="rect" Property="Width" Value="11"/>
+                                                    </DataTrigger>
+
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </local:LineSeries_Custom.DataPointStyle>
+                        </local:LineSeries_Custom>
+
+                    </DVC:Chart.Series>
+
+            <DVC:Chart.Axes>
+
+                        <DVC:LinearAxis x:Name="X_Axis" SizeChanged="X_Axis_SizeChanged" ShowGridLines="True"  Interval="1" Maximum="{Binding FinishRisk}" Minimum="{Binding StartRisk}" Orientation="X" Style="{StaticResource LinearAxisStyle_X}" Title="Доля гарантированных продаж, %" >
+                            
+                    <DVC:LinearAxis.TitleStyle>
+                                <Style TargetType="DV:Title">
+                                    <Setter Property="Margin" Value="0 0 0 0"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="Foreground" Value="#171717"/>
+                                    <Setter Property="FontFamily" Value="Calibri"/>
+                                </Style>
+                            </DVC:LinearAxis.TitleStyle>
+                            <DVC:LinearAxis.AxisLabelStyle>
+                                <Style TargetType="DVC:AxisLabel">
+                                    <Setter Property="Foreground" Value="#171717"/>
+                                    <Setter Property="Margin" Value="0 5 0 0"/>
+                                   
+                                </Style>
+                            </DVC:LinearAxis.AxisLabelStyle>
+                </DVC:LinearAxis>
+
+                        <DVC:LinearAxis  x:Name="Y_Axis" SizeChanged="Y_Axis_SizeChanged" Maximum="{Binding Maximum}"  Minimum="{Binding Minimum}"  ShowGridLines="True" Interval="{Binding Interval}" Orientation="Y" Title="{Binding AxisHeader}" Style="{StaticResource LinearAxisStyle_Y}">
+                            <DVC:LinearAxis.TitleStyle>
+                                <Style TargetType="DV:Title">
+                                    <Setter Property="Margin" Value="0 0 0 10"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="Foreground" Value="#171717"/>
+                                    <Setter Property="FontFamily" Value="Calibri"/>
+                                    <Setter Property="SnapsToDevicePixels" Value="True"/>
+                                </Style>
+                            </DVC:LinearAxis.TitleStyle>
+                            <DVC:LinearAxis.AxisLabelStyle>
+                                <Style TargetType="DVC:AxisLabel">
+                                    <Setter Property="Margin" Value="0 0 5 0"/>
+                                    <Setter Property="Foreground" Value="#171717"/>
+                                    <Setter Property="FontFamily" Value="Calibri"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="StringFormat" Value="{}{0:N}"/>
+                                </Style>
+                            </DVC:LinearAxis.AxisLabelStyle>
+                </DVC:LinearAxis>
+            </DVC:Chart.Axes>
+
+        </DVC:Chart>
+                
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0" Margin="0 0 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TabControl SelectedIndex="{Binding SelectedIndex, ElementName=btnsUnderDiagramm_FixedCosts, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Style="{StaticResource TabControlStyle1}">
+                <TabItem>
+                    <Label  Template="{StaticResource TableTitle}" ContentStringFormat="СОСТАВ ВЫРУЧКИ"/>
+                </TabItem>
+                <TabItem>
+                    <Label  Template="{StaticResource TableTitle}" ContentStringFormat="СОСТАВ ЗАТРАТ"/>
+                </TabItem>
+                <TabItem>
+                    <Label  Template="{StaticResource TableTitle}" ContentStringFormat="ПРИБЫЛЬ"/>
+                </TabItem>
+            </TabControl>
+            <Border BorderThickness="4" CornerRadius="3" BorderBrush="#B6ACB9" Grid.Row="1">
+                <TabControl SelectedIndex="{Binding SelectedIndex, ElementName=btnsUnderDiagramm_FixedCosts, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TabControlStyle1}">
+                    <TabItem>
+                        <local:RingDiagramm_Analys DataContext="{Binding CurrentScript.ProceedsDiagramm}"/>
+                    </TabItem>
+                    <TabItem>
+                        <local:RingDiagramm_Analys DataContext="{Binding CurrentScript.ExpensesDiagramm}"/>
+                    </TabItem>
+                    <TabItem>
+                        <local:GistogrammAnalys DataContext="{Binding CurrentScript.ProfitDiagramm}"/>
+                    </TabItem>
+                </TabControl>
+            </Border>
+            <Grid Grid.Row="2">
+                <ListBox x:Name="btnsUnderDiagramm_FixedCosts" Template="{StaticResource ListBox_ButtonsUnderDiagramm}">
+                    <ListBoxItem Margin="2 0 1 0" Grid.Column="0" Template="{StaticResource ButtonUnderDiagramm_Left}" ContentStringFormat="Состав выручки"></ListBoxItem>
+                    <ListBoxItem Margin="0 0 0 0" Grid.Column="1" Template="{StaticResource ButtonUnderDiagramm_Center}" ContentStringFormat="Состав затрат"/>
+                    <ListBoxItem Margin="1 0 2 0" Grid.Column="2" Template="{StaticResource ButtonUnderDiagramm_Right}" ContentStringFormat="Прибыль"/>
+                </ListBox>
+            </Grid>
+        </Grid>
+
+        <TabControl x:Name="tbHelpTable" SelectedIndex="{Binding HelpTableIndex, Mode=OneWay}" Grid.Column="1" Grid.Row="1" Style="{StaticResource TabControlStyle1}" HorizontalAlignment="Stretch">
+            <TabControl.Margin>
+                <Thickness Top="{x:Static Resources:WindowConstants.Margin}"/>
+            </TabControl.Margin>
+            <TabItem>
+                <Grid>                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  ContentStringFormat="ПОТРЕБЛЕНИЕ РЕСУРСОВ" Template="{StaticResource TableTitle}"/>
+                    <DataGrid Grid.Row="1"  SelectionUnit="Cell" VerticalAlignment="Stretch"  AutoGenerateColumns="False" ItemsSource="{Binding CurrentScript.Resources}" IsSynchronizedWithCurrentItem="True" Style="{StaticResource GridStyle_Bottom}" HorizontalAlignment="Stretch"  CanUserResizeRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn MinWidth="130" Width="0.2*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_First}"  Content="НАИМЕНОВАНИЕ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding ResourceName, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Left}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="70" Width="0.1*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="ОБЩЕЕ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding FullAmount, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="70" Width="0.1*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="ЗАКУПКИ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding AmountToBuy, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="70" Width="0.1*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Last}"  Content="ЗАПАСЫ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding AmountFromStock, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  ContentStringFormat="ПЛАН ПРОДАЖ" Template="{StaticResource TableTitle}"/>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding CurrentScript.Products}" IsSynchronizedWithCurrentItem="True" Style="{StaticResource GridStyle_Bottom}">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn MinWidth="130" Width="0.2*" >
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_First}"  Content="НАИМЕНОВАНИЕ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Left}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="100" Width="0.2*" >
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="КОЛИЧЕСТВО"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Amount, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="90" Width="0.15*" >
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="ВЫРУЧКА"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Proceeds, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Right}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+       
+        <Grid HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="1">
+            <Grid.Margin>
+                <Thickness Top="{x:Static Resources:WindowConstants.Margin}" Right="{x:Static Resources:WindowConstants.Margin}"/>
+            </Grid.Margin>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TabControl SelectedIndex="{Binding MainTableIndex, Mode=OneWay}" x:Name="tbMainTable" Grid.Column="1" Style="{StaticResource TabControlStyle1}">
+                <TabControl.Margin>
+                    <Thickness  Left="{x:Static Resources:WindowConstants.Margin}"/>
+                </TabControl.Margin>
+                <TabItem>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label ContentStringFormat="СОСТАВ ТОЧКИ" Grid.Row="0" Template="{StaticResource TableTitle}"/>
+                        <DataGrid Grid.Row="1" SelectionUnit="Cell" VerticalAlignment="Stretch"  x:Name="dGResult" AutoGenerateColumns="False" ItemsSource="{Binding CurrentScript.MainTableItems}" Style="{StaticResource GridStyle_Bottom}" HorizontalAlignment="Stretch" >
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn MinWidth="130" Width="0.4*">
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_First}"  Content="НАИМЕНОВАНИЕ"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Left}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn MinWidth="100" Width="0.15*">
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="КОЛИЧЕСТВО"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Amount, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn MinWidth="70" Width="0.1*">
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="ЦЕНА"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Value_1, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn MinWidth="90" Width="0.12*">
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_First}"  Content="ИЗ ЗАПАСА"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Value_2, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn MinWidth="80" Width="0.1*">
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Last}"  Content="УСПЕХ, (%)"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Risk, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*" ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label ContentStringFormat="СОСТАВ ТОЧКИ" Grid.Row="0" Template="{StaticResource TableTitle}"/>
+                        <DataGrid Grid.Row="1" SelectionUnit="Cell" VerticalAlignment="Stretch" AutoGenerateColumns="False" ItemsSource="{Binding CurrentScript.MainTableItems}" IsSynchronizedWithCurrentItem="True" Style="{StaticResource GridStyle_Bottom}" >
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn MinWidth="130" Width="0.4*">
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_First}"  Content="НАИМЕНОВАНИЕ"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Left}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                               <!-- <DataGridTemplateColumn MinWidth="100" Width="0.15*" >
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="КОЛИЧЕСТВО"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Amount, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>-->
+                                <DataGridTemplateColumn MinWidth="90" Width="0.13*" >
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="ВЫРУЧКА"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Value_1, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn MinWidth="90" Width="0.12*" >
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="ЗАТРАТЫ"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Value_2, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn MinWidth="80" Width="0.1*" >
+                                    <DataGridTemplateColumn.Header>
+                                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Last}"  Content="УСПЕХ, (%)"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{Binding Risk, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Center}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+            
+            </TabControl>
+            <Grid Margin="0 0 0 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Column="0" Grid.Row="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Template="{StaticResource TableTitle}" ContentStringFormat="РЕЗУЛЬТАТ СЦЕНАРИЯ" HorizontalAlignment="Left"/>
+                 <ScrollViewer Grid.Row="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="scroll" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Template="{DynamicResource ScrollViewerControlTemplate_Analys}">
+                        
+                        <StackPanel VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" Orientation="Vertical">
+                        <StackPanel.Resources>
+
+                                <Style x:Key="ContainerStyle1" TargetType="Border">
+                                    <Setter Property="BorderThickness" Value="1 1 0 1"/>
+                                    <Setter Property="BorderBrush" Value="#E5E0E6"/>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Style>
+                                <Style x:Key="ContainerStyle2" TargetType="Border">
+                                    <Setter Property="BorderThickness" Value="0 1 1 1"/>
+                                    <Setter Property="BorderBrush" Value="#E5E0E6"/>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Style>
+                                <Style x:Key="ContainerStyle3" TargetType="Border">
+                                    <Setter Property="BorderThickness" Value="1 0 0 0 "/>
+                                    <Setter Property="BorderBrush" Value="#C5C3C8"/>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Style>
+                                <Style x:Key="Label_Block" TargetType="Label">
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="FontFamily" Value="Calibri"/>
+                                    <Setter Property="Foreground" Value="#171717"/>
+                                    <Setter Property="Height" Value="50"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Label">
+                                                <Border Padding="5" Style="{StaticResource ContainerStyle1}">
+                                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping="Wrap" TextAlignment="Left" Text="{TemplateBinding ContentStringFormat}"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                            </Style>
+                            <Style x:Key="Content_Block" TargetType="Label">
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="FontFamily" Value="Calibri"/>
+                                    <Setter Property="Foreground" Value="#171717"/>
+                                    <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Label">
+                                                <Border Style="{StaticResource ContainerStyle3}">
+                                                    <Border Padding="5" Style="{StaticResource ContainerStyle2}">
+                                                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"  Text="{TemplateBinding ContentStringFormat}"/>
+                                                    </Border>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                            </Style>
+                           
+                            </StackPanel.Resources>
+                                <Grid Background="{Binding param0_back}" Visibility="{Binding param0}">
+                                <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160*"></ColumnDefinition>
+                                <ColumnDefinition Width="90*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Доля гарантированных продаж:"></Label>
+                                <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding CurrentScript.Risk_u}"></Label>
+                                   
+                                </Grid>
+                            <Grid Background="{Binding param1_back}" Visibility="{Binding param1}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="160*"></ColumnDefinition>
+                                    <ColumnDefinition Width="90*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Чистая прибыль в случае успеха:"></Label>
+
+                            <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding CurrentScript.Profit_u, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"></Label>
+                        </Grid>
+                            <Grid Background="{Binding param2_back}" Visibility="{Binding param2}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="160*"></ColumnDefinition>
+                                    <ColumnDefinition Width="90*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Гарантированная чистая прибыль:"></Label>
+                            <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding CurrentScript.Profit_Bad_u, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"></Label>
+                        </Grid>
+                            <Grid Background="{Binding param3_back}" Visibility="{Binding param3}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="160*"></ColumnDefinition>
+                                    <ColumnDefinition Width="90*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Гарантированная чистая прибыль с учетом запасов:"></Label>
+                            <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding CurrentScript.Profit_Perish_u, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"></Label>
+                        </Grid>
+                            <Grid Background="{Binding param4_back}" Visibility="{Binding param4}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="160*"></ColumnDefinition>
+                                    <ColumnDefinition Width="90*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Объем выручки:"></Label>
+                            <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding CurrentScript.Proceeds_u,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"></Label>
+                        </Grid>
+                            <Grid Background="{Binding param5_back}" Visibility="{Binding param5}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="160*"></ColumnDefinition>
+                                    <ColumnDefinition Width="90*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Общие затраты:"></Label>
+                            <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding CurrentScript.Expenses_u, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"></Label>
+                        </Grid>
+                            <Grid Background="{Binding param6_back}" Visibility="{Binding param6}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="160*"></ColumnDefinition>
+                                    <ColumnDefinition Width="90*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Бюджетные расходы:"></Label>
+                            <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding CurrentScript.BudgetCost_u, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"></Label>
+                        </Grid>
+                            <Grid Background="{Binding param7_back}" Visibility="{Binding param7}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="160*"></ColumnDefinition>
+                                    <ColumnDefinition Width="90*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Прибыль до налогообложения:"></Label>
+                            <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding CurrentScript.Profit_Before_u, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"></Label>
+                        </Grid>
+                            <Grid Background="{Binding param8_back}" Visibility="{Binding param8}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="160*"></ColumnDefinition>
+                                    <ColumnDefinition Width="90*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Налогов выплачено:"></Label>
+                            <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding CurrentScript.Delta_VAT_u, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"></Label>
+                        </Grid>
+                    </StackPanel>
+                    </ScrollViewer>
+            </Grid>
+
+        </Grid>
+        
+        
+    </Grid>
+</UserControl>

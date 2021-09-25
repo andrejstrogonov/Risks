@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Riscks.View.TripleColumnDiagramm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Riscks.View"
+             mc:Ignorable="d" 
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+            
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid>
+        <DVC:Chart Background="White"  Title="{Binding CurrentResource.DiagramHeader, Mode=OneWay}" Style="{StaticResource TripleColumnChart_Style}">
+            <DVC:Chart.Series>
+                <local:TripleColumnSeries ItemsSource="{Binding CurrentResource.TripleDiagramm, Mode=OneWay}" x:Name="doubleColumnSeries" DependentValueBinding="{Binding Value}" IndependentValueBinding="{Binding Name}" DataPointStyle="{StaticResource TripleColumnDataPointStyle}">
+                    <local:TripleColumnSeries.DependentRangeAxis>
+                        <DVC:LinearAxis ShowGridLines="True" Margin="0 0 5 0" Maximum="{Binding IndexRiskOfProductViewModel.DiagramMax, Mode=OneWay}"  Minimum="0" Orientation="Y">
+                            <DVC:LinearAxis.GridLineStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="StrokeThickness" Value="1">
+
+                                    </Setter>
+                                    <Setter Property="Stroke" Value="#d7d7d7"/>
+                                </Style>
+                            </DVC:LinearAxis.GridLineStyle>
+                            <DVC:LinearAxis.MajorTickMarkStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Style>
+                            </DVC:LinearAxis.MajorTickMarkStyle>
+                            <DVC:LinearAxis.MinorTickMarkStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Style>
+                            </DVC:LinearAxis.MinorTickMarkStyle>
+                            <DVC:LinearAxis.AxisLabelStyle>
+                                <Style TargetType="DVC:AxisLabel">
+                                    <Setter Property="StringFormat" Value="{}{0:N}"/>
+                                </Style>
+                            </DVC:LinearAxis.AxisLabelStyle>
+                        </DVC:LinearAxis>
+                    </local:TripleColumnSeries.DependentRangeAxis>
+                    <local:TripleColumnSeries.IndependentAxis>
+                        <DVC:CategoryAxis Orientation="X">
+                            <DVC:CategoryAxis.MajorTickMarkStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Style>
+                            </DVC:CategoryAxis.MajorTickMarkStyle>
+                        </DVC:CategoryAxis>
+                    </local:TripleColumnSeries.IndependentAxis>
+                    <local:TripleColumnSeries.LegendItemStyle>
+                        <Style TargetType="DVC:LegendItem">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </Style>
+                    </local:TripleColumnSeries.LegendItemStyle>
+                    <local:TripleColumnSeries.LegendItems>
+                        <DVC:LegendItem Margin="0 0 10 0" FontSize="14" Visibility="Visible" Style="{StaticResource LegendItemStyle_Gistogram}" Content="Запас" Background="#EEA863"/>
+                        <DVC:LegendItem Margin="10 0 0 0" FontSize="14" Visibility="Visible" Style="{StaticResource LegendItemStyle_Gistogram}" Content="Максимум по закупке" Background="#DC5E5F"/>
+                    </local:TripleColumnSeries.LegendItems>
+                </local:TripleColumnSeries>
+
+            </DVC:Chart.Series>
+        </DVC:Chart>
+    </Grid>
+</UserControl>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<History xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LastTimeAccess>2020-02-26T15:03:08.2021407+03:00</LastTimeAccess>
+  <HistoryList>
+    <HistoryItem>
+      <DateTime>2020-02-25T21:46:18.3968207+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Деталь мебельная 2700х600х16 мм, кромка с длинных сторон</TitleChange>
+      <ID>1</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Деталь мебельная 2700х600х16 мм, кромка с длинных сторон</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-25T21:46:21.9025396+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Деталь мебельная 2700х500х16 мм, кромка с длинных сторон</TitleChange>
+      <ID>2</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Деталь мебельная 2700х500х16 мм, кромка с длинных сторон</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-25T21:46:25.8776991+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Деталь мебельная 2700х300х16 мм, кромка с длинных сторон</TitleChange>
+      <ID>3</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Деталь мебельная 2700х300х16 мм, кромка с длинных сторон</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-25T21:46:30.1102872+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Деталь мебельная 1200х400х16 мм, кромка с длинных сторон</TitleChange>
+      <ID>4</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Деталь мебельная 1200х400х16 мм, кромка с длинных сторон</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-25T21:46:34.4937701+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Деталь мебельная 2700х900х16 мм, без кромки</TitleChange>
+      <ID>5</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Деталь мебельная 2700х900х16 мм, без кромки</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-25T21:46:39.3575925+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Деталь мебельная 800х300х16 мм, кромка со всех сторон</TitleChange>
+      <ID>6</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Деталь мебельная 800х300х16 мм, кромка со всех сторон</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-25T21:46:40.3167077+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Деталь мебельная 2700х1200х16 мм, без кромки</TitleChange>
+      <ID>7</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Деталь мебельная 2700х1200х16 мм, без кромки</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-25T21:46:47.9135183+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Деталь мебельная 800х200х16 мм, кромка со всех сторон</TitleChange>
+      <ID>8</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Деталь мебельная 800х200х16 мм, кромка со всех сторон</NewValue>
+      <GroupItems />
+    </HistoryItem>
+    <HistoryItem>
+      <DateTime>2020-02-25T21:46:58.8606912+03:00</DateTime>
+      <TypeOfItem>Product</TypeOfItem>
+      <Title>
+Наименование</Title>
+      <TitleChange>
+Деталь мебельная 600х300х16 мм, кромка со всех сторон</TitleChange>
+      <ID>9</ID>
+      <Property>Name</Property>
+      <LastValue xsi:type="xsd:string" />
+      <NewValue xsi:type="xsd:string">Деталь мебельная 600х300х16 мм, кромка со всех сторон</NewValue>
+      <GroupItems />
+    </HistoryItem>
+  </HistoryList>
+</History>

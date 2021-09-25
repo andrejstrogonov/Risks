@@ -1,0 +1,179 @@
+﻿<UserControl x:Class="Riscks.View.ResourceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Resources="clr-namespace:Riscks.Resources"
+             xmlns:ViewModels="clr-namespace:Riscks.ViewModel"
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             
+             xmlns:local="clr-namespace:Riscks.View"
+             xmlns:Converters="clr-namespace:Riscks.Converters"
+             mc:Ignorable="d" Style="{StaticResource CommonFontForUserControl}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  MinWidth="500" MaxWidth="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}">
+    <UserControl.Resources>
+        <Converters:BoolToIntConverter x:Key="FromBoolToIntConverter"/>
+        <Converters:BoolToColorConverter x:Key="FromBoolToColorConverter"/>
+        <ResourceDictionary x:Key="Styles" Source="/Riscks;component/Resources/StylesResources.xaml"/>
+    </UserControl.Resources>
+    <Grid  VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="400*" ></RowDefinition>
+            <RowDefinition Height="265*" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*"></ColumnDefinition>
+            <ColumnDefinition Width="700*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" ContentStringFormat="РЕСУРСЫ" Template="{StaticResource TableTitle}"/>
+            <DataGrid SelectedCellsChanged="dataGridResources_SelectedCellsChanged" MinHeight="337"  Style="{StaticResource GridStyle}"  Grid.Row="1" x:Name="dataGridResources" ItemsSource="{Binding Resources, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding CurrentResource, UpdateSourceTrigger=PropertyChanged}">
+                <DataGrid.Resources>
+                    <local:BindingProxy x:Key="IsFullVATProxy" Data="{Binding IsFullVAT}"/>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn x:Name="columnName" MinWidth="120" Width="0.4*">
+                        <DataGridTemplateColumn.Header>
+                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_First}" Content="НАИМЕНОВАНИЕ"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ContentPresenter ContentTemplate="{StaticResource DataGridCell_Left}" Content="{Binding Name, UpdateSourceTrigger=LostFocus, Mode=TwoWay}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+                   
+                    <DataGridTemplateColumn x:Name="columnPrice" MinWidth="95" Width="0.15*">
+                        <DataGridTemplateColumn.Header>
+                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="СТОИМОСТЬ"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ContentPresenter Content="{Binding Price,   UpdateSourceTrigger=LostFocus, Mode=TwoWay}" ContentTemplate="{StaticResource DataGridCell_Right}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn x:Name="columnEI1" MinWidth="60" Width="0.05*">
+                        <DataGridTemplateColumn.Header>
+                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="  Е.И.  "/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding unitsMoney}" SelectedItem="{Binding UnitOfPriceSymbol, UpdateSourceTrigger=PropertyChanged}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn x:Name="columnMax" MinWidth="95" Width="0.15*">
+                        <DataGridTemplateColumn.Header>
+                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="МАКСИМУМ"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ContentPresenter Content="{Binding}" ContentTemplate="{StaticResource DataGridCell_Rigth_Infinity}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+
+                    </DataGridTemplateColumn>
+                   <DataGridTemplateColumn x:Name="columnStock" MinWidth="65"  Width="0.12*">
+                        <DataGridTemplateColumn.Header>
+                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="ЗАПАСЫ"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ContentPresenter Content="{Binding Stock, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" ContentTemplate="{StaticResource DataGridCell_Right}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn x:Name="columnEI2" MinWidth="60" Width="0.05*">
+                        <DataGridTemplateColumn.Header>
+                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="  Е.И.  "/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding unitsNotMoneyMaximum}" SelectedItem="{Binding UnitOfMaximumSymbol, UpdateSourceTrigger=PropertyChanged}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="0.1*" MinWidth="85" x:Name="IsIntegerColumn" >
+                        <DataGridTemplateColumn.Header>
+                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}" Content="ЦЕЛЫЙ"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ContentPresenter Content="{Binding IsInteger, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ContentTemplate="{StaticResource DataGridCellSlider_Template}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn x:Name="skoroport" MinWidth="95" Width="0.1*" >
+                        <DataGridTemplateColumn.Header>
+                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="СКОРОПОРТ"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ContentPresenter Content="{Binding Perishable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ContentTemplate="{StaticResource DataGridCellSlider_Template}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn MinWidth="65" Visibility="{Binding Data, Source={StaticResource IsFullVATProxy}}"  Width="0.07*" >
+                        <DataGridTemplateColumn.Header>
+                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Last}"  Content="НДС, (%)"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox  Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding Taxes}" SelectedItem="{Binding InputTax, UpdateSourceTrigger=PropertyChanged}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <Grid Grid.Row="2">
+                <Grid Margin="6 0 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Background="Transparent" Width="{Binding ActualWidth, ElementName=columnName}"></Grid>
+                    <Grid Grid.Column="1" Background="Transparent" Width="{Binding ActualWidth, ElementName=columnPrice}"></Grid>
+                    <Grid Grid.Column="2" Background="Transparent" Width="{Binding ActualWidth, ElementName=columnEI1}"></Grid>
+                    <Grid Grid.Column="3" Background="Transparent" Width="{Binding ActualWidth, ElementName=columnMax}"></Grid>
+                    <Grid Grid.Column="4" Background="Transparent" Width="{Binding ActualWidth, ElementName=columnStock}"></Grid>
+                    <Grid Grid.Column="5" Background="Transparent" Width="{Binding ActualWidth, ElementName=columnEI1}"></Grid>
+                    <ComboBox ItemsSource="{Binding unitsDefaultSymbolsPrice}" SelectedItem="{Binding UnitDefaultSymbolPrice, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Style="{StaticResource ComboBoxStyle_Single}" Width="{Binding ActualWidth, ElementName=columnEI1}"></ComboBox>
+                    <Label HorizontalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="2" Style="{StaticResource LabelStyle_15}" Content="Е.И. по умолчанию:"/>
+                    <ComboBox ItemsSource="{Binding unitsDefaultSymbolsAmount}" SelectedItem="{Binding UnitDefaultSymbolAmount, UpdateSourceTrigger=PropertyChanged}" Grid.Column="5" Style="{StaticResource ComboBoxStyle_Single}" Width="{Binding ActualWidth, ElementName=columnEI2}"></ComboBox>
+
+                </Grid>
+                
+                <StackPanel HorizontalAlignment="Left"  Orientation="Horizontal">
+                <Button  x:Name="button" ContentStringFormat="Добавить ресурс" Template="{StaticResource TableButton_Left_Gray}" Command="{Binding AddCommand}"/>
+                <Button  x:Name="button1" ContentStringFormat="Удалить" Template="{StaticResource TableButton_Right_Red}" Command="{Binding DeleteCommand}" />
+            </StackPanel>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+    
+</UserControl>

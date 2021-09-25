@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="Riscks.View.HorizontalGistogram"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:DV="http://schemas.microsoft.com/wpf/2008/toolkit"
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:local="clr-namespace:Riscks.View"
+             mc:Ignorable="d" 
+            >
+    <Grid>
+        <DVC:Chart  Background="White" Grid.Row="1" Palette="{StaticResource palette_colors}" VerticalAlignment="Stretch" Title="{Binding CurrentResource.DiagramHeader, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource ChartStyleResources}">
+            <DVC:Chart.Series>
+                <local:HorizontalColumnSeries  x:Name="BarSeries" Title="{Binding CurrentResource.Name}" IsSelectionEnabled="False" ItemsSource="{Binding CurrentResource.Using}" IndependentValuePath="ProductName"  LegendItemStyle="{StaticResource LegendItemStyle_HorisontalGistogram}" DependentValuePath="Amount" Style="{DynamicResource HorizontalColumnSeriesStyle}" DataPointStyle="{DynamicResource HorizontalGistDataPointStyle}"  >
+                   
+                    <local:HorizontalColumnSeries.DependentRangeAxis>
+                        <DVC:LinearAxis BorderThickness="0" Orientation="X" Location="Top">
+                            <DVC:LinearAxis.MinorTickMarkStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </Style>
+                            </DVC:LinearAxis.MinorTickMarkStyle>
+                            <DVC:LinearAxis.MajorTickMarkStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </Style>
+                            </DVC:LinearAxis.MajorTickMarkStyle>
+
+                            <DVC:LinearAxis.AxisLabelStyle>
+                                <Style TargetType="DVC:AxisLabel">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Style>
+                            </DVC:LinearAxis.AxisLabelStyle>
+                        </DVC:LinearAxis>
+                    </local:HorizontalColumnSeries.DependentRangeAxis>
+                    <local:HorizontalColumnSeries.IndependentAxis>
+                        <DVC:CategoryAxis Orientation="Y" Location="Right">
+                            <DVC:CategoryAxis.MajorTickMarkStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </Style>
+                            </DVC:CategoryAxis.MajorTickMarkStyle>
+                            <DVC:CategoryAxis.AxisLabelStyle>
+                                <Style TargetType="DVC:AxisLabel">
+                                    <Setter Property="Margin" Value="15 4 0 4"/>
+                                    <Setter Property="Foreground" Value="#443F45"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="FontFamily" Value="Calibri"/>
+                                    <Setter Property="ToolTip" >
+                                        <Setter.Value>
+                                            <ToolTip Content="{Binding DataContext, RelativeSource={RelativeSource Self}}">
+                                                
+                                            </ToolTip>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DVC:CategoryAxis.AxisLabelStyle>
+                        </DVC:CategoryAxis>
+                    </local:HorizontalColumnSeries.IndependentAxis>
+                </local:HorizontalColumnSeries>
+            </DVC:Chart.Series>
+        </DVC:Chart>
+
+    </Grid>
+</UserControl>

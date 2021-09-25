@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="Riscks.View.RiskOfProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Riscks.View"
+             mc:Ignorable="d" Style="{StaticResource CommonFontForUserControl}" VerticalAlignment="Stretch" MinWidth="2in" MaxWidth="9in"  MinHeight="2in" >
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resources/StylesResources.xaml"/>
+    </UserControl.Resources>
+    <Grid VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+            <Label Grid.Row="0"  ContentStringFormat="РИСКИ" Template="{StaticResource TableTitle}"/>
+        
+        <DataGrid SelectedCellsChanged="dGRiskTable_SelectedCellsChanged" Grid.Row="1"  x:Name="dGRiskTable" Style="{StaticResource GridStyle_Bottom}" ItemsSource="{Binding RisksOfProduct}" SelectedItem="{Binding CurrentRiskOfProduct, UpdateSourceTrigger=PropertyChanged}" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn MinWidth="65"  Width="0.15*">
+                    <DataGridTemplateColumn.Header>
+                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_First}"  Content="ЦЕНА"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentPresenter Content="{Binding Price, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" ContentTemplate="{StaticResource DataGridCell_Right}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn  Width="0.1*" MinWidth="61">
+                    <DataGridTemplateColumn.Header>
+                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="  Е.И.  "/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding unitsMoney}" SelectedItem="{Binding UnitOfPriceSymbol, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="0.15*" MinWidth="70">
+                    <DataGridTemplateColumn.Header>
+                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="ГАРАНТ"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentPresenter Content="{Binding GarantedAmount, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" ContentTemplate="{StaticResource DataGridCell_Right}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn  Width="0.15*" MinWidth="90" >
+                    <DataGridTemplateColumn.Header>
+                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="МАКСИМУМ"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentPresenter Content="{Binding MaximumAmount, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" ContentTemplate="{StaticResource DataGridCell_Right}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn  Width="0.1*" MinWidth="61">
+                    <DataGridTemplateColumn.Header>
+                        <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center}"  Content="  Е.И.  "/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding unitsNotMoney}" SelectedItem="{Binding UnitOfAmountSymbol, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Left" Grid.Row="2" Orientation="Horizontal">
+            <Button Template="{StaticResource TableButton_Left_Gray}" x:Name="button"  ContentStringFormat="Добавить ценовую комбинацию"   Command="{Binding AddRisk}"/>
+            <Button  Template="{StaticResource TableButton_Right_Red}" x:Name="button_Copy" ContentStringFormat="Удалить" Command="{Binding DeleteRisk}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

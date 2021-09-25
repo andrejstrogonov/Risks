@@ -1,0 +1,588 @@
+﻿<UserControl x:Class="Riscks.View.FlexibilityView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Riscks.View"
+             xmlns:ViewModel="clr-namespace:Riscks.ViewModel"
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:Resources="clr-namespace:Riscks.Resources"
+             xmlns:gl="clr-namespace:System.Globalization;assembly=mscorlib"
+             mc:Ignorable="d" 
+              Style="{StaticResource CommonFontForUserControl}" MinWidth="1000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="200" MaxHeight="900" MaxWidth="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resources/StylesResources.xaml"/>
+    </UserControl.Resources>
+    <Grid>
+        <TabControl SelectedIndex="{Binding FlexibilityIndex}" Background="Transparent" x:Name="TabControl" Style="{StaticResource TabControlStyle1}">
+            
+            <TabItem>
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="0.9*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" ContentStringFormat="ЭЛАСТИЧНОСТЬ" Template="{StaticResource TableTitle}"/>
+                    <DataGrid  SizeChanged="FlexGrid_SizeChanged" Grid.Row="1" x:Name="dataGrid" Style="{StaticResource GridStyle_HighHeader}" ItemsSource="{Binding FlexibilityCollectionView.View}" Margin="0"  >
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn x:Name="FlexFirstColumn" MinWidth="130" Width="0.3*"  >
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Left_Multiline}" Content="НАИМЕНОВАНИЕ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter ContentTemplate="{StaticResource DataGridCell_UnEditable_Left}" Content="{Binding Parameter_Change, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="90" Width="0.1*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="СТОРОНА&#10;ИЗМЕНЕНИЯ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Changing, UpdateSourceTrigger=PropertyChanged}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Image}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="115" Width="0.13*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="КОЭФФИЦИЕНТ&#10;ЭЛАСТИЧНОСТИ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Coefficient_Flexibility, UpdateSourceTrigger=PropertyChanged}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Right}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="115" Width="0.12*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}" Content="ВОЗМОЖНОСТЬ&#10;ИЗМЕНЕНИЯ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Posibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ContentTemplate="{StaticResource DataGridCellSlider_Template}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn MinWidth="100" Width="0.1*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="ПРЕДЫДУЩЕЕ&#10;ЗНАЧЕНИЕ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding LastMeaning, UpdateSourceTrigger=PropertyChanged}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Right}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="80" Width="0.1*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="НОВОЕ&#10;ЗНАЧЕНИЕ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding NewMeaning, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ContentTemplate="{StaticResource DataGridCell_Right_Gray}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn x:Name="ProceedsColumn" MinWidth="90" Width="0.1*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="ДОХОД ОТ&#10;ИЗМЕНЕНИЯ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding ProfitFromChange, UpdateSourceTrigger=PropertyChanged}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Right}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn  x:Name="PriceColumn" MinWidth="90" Width="0.1*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center_Multiline}"  Content="СТОИМОСТЬ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding PriceOfChange, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ContentTemplate="{StaticResource DataGridCell_Right_Gray}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn x:Name="ResultColumn" MinWidth="110" Width="0.2*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="ФИНАНСОВЫЙ&#10;РЕЗУЛЬТАТ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Result, UpdateSourceTrigger=PropertyChanged}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Right}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn x:Name="CommentColumn" MinWidth="110" Width="0.2*">
+                                <DataGridTemplateColumn.Header>
+                                    <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Center_Multiline}"  Content="КОММЕНТАРИЙ"/>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Comment, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ContentTemplate="{StaticResource DataGridCell_Right_big}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                        <DataGrid.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="GroupItem">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="GroupItem">
+                                                    <Expander IsExpanded="True" Template="{DynamicResource ExpanderControlTemplate1}">
+                                                        <Expander.Header>
+                                                            <Border Height="Auto" Background="#feeddd" CornerRadius="0" HorizontalAlignment="Stretch" >
+                                                                <TextBlock Margin="5 0" VerticalAlignment="Center"  HorizontalAlignment="Left" Text="{Binding Name, Mode=OneWay}"/>
+                                                            </Border>
+                                                        </Expander.Header>
+                                                        <Expander.Content>
+                                                            <ItemsPresenter HorizontalAlignment="Stretch"/>
+                                                        </Expander.Content>
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </DataGrid.GroupStyle>
+                    </DataGrid>
+                    <Grid Grid.Row="2" HorizontalAlignment="Right">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Padding="0 5 0 5" Grid.Column="0" Style="{StaticResource LabelStyle_15}" HorizontalContentAlignment="Left" Content="Всего:" HorizontalAlignment="Left"/>
+                        <Label Padding="1 5 5 5" Grid.Column="1" MinWidth="{Binding ActualWidth, ElementName=PriceColumn}" HorizontalContentAlignment="Right" Style="{StaticResource LabelStyle_15}" Content="{Binding SumOfResults, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right"></Label>
+                        <Button Margin="1 0 1 0" Grid.Column="2" Width="{Binding ActualWidth, ElementName=ResultColumn}" Template="{StaticResource TableButton_Center_Orange_Nobold}"  ContentStringFormat="Пересчитать" Command="{Binding OpenFlexibilityAnalysCommand}"/>
+                        <Button Margin="1 0 6 0" Grid.Column="3" Width="{Binding ActualWidth, ElementName=CommentColumn}" Template="{StaticResource TableButton_Center_LightGray}" Command="{Binding SetFlexibilityParametersCommand}" ContentStringFormat="Продолжить" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem >
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.71*" ></ColumnDefinition>
+                        <ColumnDefinition MinWidth="365" MaxWidth="546" Width="0.29*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="400*"></RowDefinition>
+                        <RowDefinition Height="265*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0" Grid.Row="0">
+                        <Grid.Margin>
+                            <Thickness  Right="{x:Static Resources:WindowConstants.Margin}"/>
+                        </Grid.Margin>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Bottom" Grid.Row="0"  ContentStringFormat="КАРТА СЦЕНАРИЕВ" Template="{StaticResource TableTitle}"></Label>
+
+
+                        <Border Grid.Row="1" Grid.Column="0" Padding="10" Background="White" BorderThickness="4" BorderBrush="#B3A9B6" CornerRadius="3">
+                            <DVC:Chart  Style="{StaticResource ChartStyle1}" x:Name="chart" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+                                <DVC:Chart.Series>
+                                    <DVC:ScatterSeries x:Name="HelpSeries" ItemsSource="{Binding FlexibilityGraphic.before_graphic.Points, Mode=OneWay}" SelectedItem="{Binding FlexibilityGraphic.before_graphic.CurrentPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSelectionEnabled="True" IndependentValueBinding="{Binding Path=X, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" DependentValueBinding="{Binding Path=Y,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}">
+                                        <DVC:ScatterSeries.LegendItemStyle>
+                                            <Style TargetType="DVC:LegendItem">
+                                                <Setter Property="Visibility" Value="Hidden"/>
+                                            </Style>
+                                        </DVC:ScatterSeries.LegendItemStyle>
+                                        <DVC:ScatterSeries.DataPointStyle>
+                                            <Style TargetType="DVC:ScatterDataPoint">
+                                                <Setter Property="Width" Value="Auto"></Setter>
+                                                <Setter Property="Height" Value="Auto"/>
+                                                <Setter Property="IsSelectionEnabled" Value="True"/>
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Visibility" Value="Hidden"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="DVC:ScatterDataPoint">
+                                                            <Border x:Name="bd" Visibility="Hidden" Width="5" BorderThickness="1 0 1 0" BorderBrush="#aaEAE5EC">
+                                                                <Rectangle x:Name="rect" Visibility="Hidden" StrokeThickness="1" Stroke="#aa857D8C"  Fill="#CAA6C0" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" Width="5" VerticalAlignment="Stretch" ></Rectangle>
+                                                            </Border>
+                                                            <ControlTemplate.Triggers>
+                                                                <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                    <Setter Property="Visibility" TargetName="bd" Value="Visible"/>
+                                                                    <Setter Property="Visibility" TargetName="rect" Value="Visible"/>
+                                                                </DataTrigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </DVC:ScatterSeries.DataPointStyle>
+                                    </DVC:ScatterSeries>
+
+                                    <DVC:LineSeries Visibility="{Binding beforeVis}" LegendItemStyle="{StaticResource LegendItemStyle_LineSeries}" Background="#B7C671" x:Name="SeriesBefore" Title="Прибыль до изменений" ItemsSource="{Binding FlexibilityGraphic.before_graphic.Points, Mode=OneWay}" SelectedItem="{Binding FlexibilityGraphic.before_graphic.CurrentPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSelectionEnabled="True" IndependentValueBinding="{Binding X, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" DependentValueBinding="{Binding Y, StringFormat=N3, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}">
+                                        <DVC:LineSeries.DataPointStyle>
+                                            <Style TargetType="DVC:LineDataPoint">
+                                                <Setter Property="Background" Value="#B7C671"></Setter>
+                                                <Setter Property="IsSelectionEnabled" Value="True"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="DVC:LineDataPoint">
+                                                            <Canvas Margin="-2 -2 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                                <Ellipse x:Name="rect" Height="9" Width="9" StrokeThickness="2" Stroke="#aaFDFCF8" Fill="{TemplateBinding Background}"/>
+                                                            </Canvas>
+                                                            <ControlTemplate.Triggers>
+                                                                <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                                    <Setter TargetName="rect" Property="Height" Value="13"/>
+                                                                    <Setter TargetName="rect" Property="Width" Value="13"/>
+                                                                </DataTrigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </DVC:LineSeries.DataPointStyle>
+
+                                    </DVC:LineSeries>
+
+                                    <DVC:LineSeries Visibility="{Binding afterVis}" LegendItemStyle="{StaticResource LegendItemStyle_LineSeries}" Background="#4D99A6" x:Name="afterSeries" Title="Прибыль после изменений" ItemsSource="{Binding FlexibilityGraphic.after_graphic.Points, Mode=OneWay}" SelectedItem="{Binding FlexibilityGraphic.after_graphic.CurrentPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSelectionEnabled="True" IndependentValueBinding="{Binding X}" DependentValueBinding="{Binding Y}">
+
+                                        <DVC:LineSeries.DataPointStyle>
+                                            <Style TargetType="DVC:LineDataPoint">
+                                                <Setter Property="Background" Value="#4D99A6"></Setter>
+                                                <Setter Property="IsSelectionEnabled" Value="True"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="DVC:LineDataPoint">
+                                                            <Canvas Margin="-2 -2 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                                <Ellipse x:Name="rect" Width="9" StrokeThickness="2" Height="9" Stroke="#aaFDFCF8" Fill="{TemplateBinding Background}"></Ellipse>
+                                                            </Canvas>
+                                                            <ControlTemplate.Triggers>
+                                                                <DataTrigger Binding="{Binding IsSelected}" Value="True">
+
+                                                                    <Setter TargetName="rect" Property="Height" Value="13"/>
+                                                                    <Setter TargetName="rect" Property="Width" Value="13"/>
+                                                                </DataTrigger>
+
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </DVC:LineSeries.DataPointStyle>
+                                    </DVC:LineSeries>
+
+                                    <DVC:LineSeries Visibility="{Binding afterPeriodVis}" BorderThickness="0" Background="#525F70" LegendItemStyle="{StaticResource LegendItemStyle_LineSeries}" x:Name="AfterPeriodSeries" Title="Прибыль после периода окупаемости" IsSelectionEnabled="True" SelectedItem="{Binding FlexibilityGraphic.afterperiod_graphic.CurrentPoint,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding FlexibilityGraphic.afterperiod_graphic.Points, Mode=OneWay}" IndependentValueBinding="{Binding X,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" DependentValueBinding="{Binding Y,StringFormat=N, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}">
+                                        <DVC:LineSeries.DataPointStyle>
+                                            <Style TargetType="DVC:LineDataPoint">
+                                                <Setter Property="Background" Value="#525F70"></Setter>
+                                                <Setter Property="IsSelectionEnabled" Value="True"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate>
+                                                            <Canvas Margin="-2 -2 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                                <Ellipse x:Name="rect" Width="9" Height="9" StrokeThickness="2" Stroke="#aaFDFCF8" Fill="{TemplateBinding Background}"/>
+                                                            </Canvas>
+                                                            <ControlTemplate.Triggers>
+                                                                <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                                    <Setter TargetName="rect" Property="Height" Value="13"/>
+                                                                    <Setter TargetName="rect" Property="Width" Value="13"/>
+                                                                </DataTrigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </DVC:LineSeries.DataPointStyle>
+                                    </DVC:LineSeries>
+
+                                </DVC:Chart.Series>
+
+                                <DVC:Chart.Axes>
+
+                                    <DVC:LinearAxis x:Name="X_Axis" SizeChanged="X_Axis_SizeChanged" ShowGridLines="True"  Interval="1" Maximum="{Binding FlexibilityGraphic.FinishRisk}" Minimum="{Binding FlexibilityGraphic.StartRisk}" Orientation="X" Style="{StaticResource LinearAxisStyle_X}" Title="Доля гарантированных продаж, %" >
+
+                                        <DVC:LinearAxis.TitleStyle>
+                                            <Style TargetType="DV:Title">
+                                                <Setter Property="Margin" Value="0 0 0 0"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                                <Setter Property="Foreground" Value="#171717"/>
+                                                <Setter Property="FontFamily" Value="Calibri"/>
+                                            </Style>
+                                        </DVC:LinearAxis.TitleStyle>
+                                        <DVC:LinearAxis.AxisLabelStyle>
+                                            <Style TargetType="DVC:AxisLabel">
+                                                <Setter Property="Foreground" Value="#171717"/>
+                                                <Setter Property="Margin" Value="0 5 0 0"/>
+                                            </Style>
+                                        </DVC:LinearAxis.AxisLabelStyle>
+                                    </DVC:LinearAxis>
+
+                                    <DVC:LinearAxis  x:Name="Y_Axis" SizeChanged="Y_Axis_SizeChanged"  ShowGridLines="True" Orientation="Y" Title="{Binding FlexibilityGraphic.AxisHeader}" Style="{StaticResource LinearAxisStyle_Y}">
+                                        <DVC:LinearAxis.TitleStyle>
+                                            <Style TargetType="DV:Title">
+                                                <Setter Property="Margin" Value="0 0 0 10"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                                <Setter Property="Foreground" Value="#171717"/>
+                                                <Setter Property="FontFamily" Value="Calibri"/>
+                                                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                                            </Style>
+                                        </DVC:LinearAxis.TitleStyle>
+                                        <DVC:LinearAxis.AxisLabelStyle>
+                                            <Style TargetType="DVC:AxisLabel">
+                                                <Setter Property="Margin" Value="0 0 5 0"/>
+                                                <Setter Property="Foreground" Value="#171717"/>
+                                                <Setter Property="FontFamily" Value="Calibri"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                                <Setter Property="StringFormat" Value="{}{0:N}"/>
+                                            </Style>
+                                        </DVC:LinearAxis.AxisLabelStyle>
+                                    </DVC:LinearAxis>
+                                </DVC:Chart.Axes>
+
+                            </DVC:Chart>
+
+                        </Border>
+
+                    </Grid>
+                    <Grid Grid.Column="1" Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TabControl SelectedIndex="{Binding SelectedIndex, ElementName=btnsUnderDiagramm_FixedCosts, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Style="{StaticResource TabControlStyle1}">
+                            <TabItem>
+                                <Label  Template="{StaticResource TableTitle}" ContentStringFormat="ПРИБЫЛЬ"/>
+                            </TabItem>
+                            <TabItem>
+                                <Label  Template="{StaticResource TableTitle}" ContentStringFormat="СОСТАВ ПРИБЫЛИ ДО ИЗМЕНЕНИЙ"/>
+                            </TabItem>
+
+                            <TabItem>
+                                <Label  Template="{StaticResource TableTitle}" ContentStringFormat="СОСТАВ ПРИБЫЛИ ПОСЛЕ ИЗМЕНЕНИЙ"/>
+                            </TabItem>
+                        </TabControl>
+                        <Border BorderThickness="4" CornerRadius="3" BorderBrush="#B6ACB9" Grid.Row="1">
+                            <TabControl SelectedIndex="{Binding SelectedIndex, ElementName=btnsUnderDiagramm_FixedCosts, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TabControlStyle1}">
+                                <TabItem>
+                                    <local:GistogramAnalys_Flexibility DataContext="{Binding FlexibilityGraphic.CurrentScript.ProfitDiagramm}"/>
+                                </TabItem>
+                                <TabItem>
+                                    <local:RingDiagramm_Analys DataContext="{Binding FlexibilityGraphic.CurrentScript.ProductProfitDiagramm_Before}"/>
+                                </TabItem>
+                                <TabItem>
+                                    <local:RingDiagramm_Analys DataContext="{Binding FlexibilityGraphic.CurrentScript.ProductProfitDiagramm_After}"/>
+                                </TabItem>
+                            </TabControl>
+                        </Border>
+                        <Grid Grid.Row="2">
+                            <ListBox x:Name="btnsUnderDiagramm_FixedCosts" Template="{StaticResource ListBox_ButtonsUnderDiagramm_4}">
+                                <ListBoxItem Margin="2 0 1 0" Grid.Column="0" Template="{StaticResource ButtonUnderDiagramm_Left}" ContentStringFormat="Прибыль"></ListBoxItem>
+                                <ListBoxItem Margin="0 0 0 0" Grid.Column="1" Template="{StaticResource ButtonUnderDiagramm_Center}" ContentStringFormat="Состав прибыли до"/>
+                                <ListBoxItem Margin="1 0 2 0" Grid.Column="2" Template="{StaticResource ButtonUnderDiagramm_Right}" ContentStringFormat="Состав прибыли после"/>
+                            </ListBox>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                        <Grid.Margin>
+                            <Thickness  Top="{x:Static Resources:WindowConstants.Margin}"/>
+                        </Grid.Margin>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="260" Width="360*"></ColumnDefinition>
+                            <ColumnDefinition Width="930*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.Margin>
+                                <Thickness  Right="{x:Static Resources:WindowConstants.Margin}"/>
+                            </Grid.Margin>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Template="{StaticResource TableTitle}" ContentStringFormat="РЕЗУЛЬТАТ СЦЕНАРИЯ" HorizontalAlignment="Left"/>
+                            <ScrollViewer Grid.Row="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="scroll" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Template="{DynamicResource ScrollViewerControlTemplate_Analys}">
+
+                                <StackPanel VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" Orientation="Vertical">
+                                    <StackPanel.Resources>
+
+                                        <Style x:Key="ContainerStyle1" TargetType="Border">
+                                            <Setter Property="BorderThickness" Value="1 1 0 1"/>
+                                            <Setter Property="BorderBrush" Value="#E5E0E6"/>
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Style>
+                                        <Style x:Key="ContainerStyle2" TargetType="Border">
+                                            <Setter Property="BorderThickness" Value="0 1 1 1"/>
+                                            <Setter Property="BorderBrush" Value="#E5E0E6"/>
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Style>
+                                        <Style x:Key="ContainerStyle3" TargetType="Border">
+                                            <Setter Property="BorderThickness" Value="1 0 0 0 "/>
+                                            <Setter Property="BorderBrush" Value="#C5C3C8"/>
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Style>
+                                        <Style x:Key="Label_Block" TargetType="Label">
+                                            <Setter Property="FontSize" Value="15"/>
+                                            <Setter Property="FontFamily" Value="Calibri"/>
+                                            <Setter Property="Foreground" Value="#171717"/>
+                                            <Setter Property="Height" Value="50"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Label">
+                                                        <Border Padding="5" Style="{StaticResource ContainerStyle1}">
+                                                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping="Wrap" TextAlignment="Left" Text="{TemplateBinding ContentStringFormat}"/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                        <Style x:Key="Content_Block" TargetType="Label">
+                                            <Setter Property="FontSize" Value="15"/>
+                                            <Setter Property="FontFamily" Value="Calibri"/>
+                                            <Setter Property="Foreground" Value="#171717"/>
+                                            <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Label">
+                                                        <Border Style="{StaticResource ContainerStyle3}">
+                                                            <Border Padding="5" Style="{StaticResource ContainerStyle2}">
+                                                                <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"  Text="{TemplateBinding ContentStringFormat}"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+
+                                    </StackPanel.Resources>
+                                    <Grid Background="White">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160*"></ColumnDefinition>
+                                            <ColumnDefinition Width="90*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Доля гарантированных продаж:"></Label>
+                                        <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding FlexibilityGraphic.CurrentScript.Risk_u}"></Label>
+
+                                    </Grid>
+                                    <Grid Background="#EFEDF0" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160*"></ColumnDefinition>
+                                            <ColumnDefinition Width="90*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Прибыль до изменений:"></Label>
+
+                                        <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding FlexibilityGraphic.CurrentScript.Profit_Before_u}"></Label>
+                                    </Grid>
+                                    <Grid Background="White" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160*"></ColumnDefinition>
+                                            <ColumnDefinition Width="90*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Прибыль после изменений:"></Label>
+                                        <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding FlexibilityGraphic.CurrentScript.Profit_After_u}"></Label>
+                                    </Grid>
+                                    <Grid  Background="#EFEDF0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160*"></ColumnDefinition>
+                                            <ColumnDefinition Width="90*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Прибыль с затратами на изменение:"></Label>
+                                        <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding FlexibilityGraphic.CurrentScript.Profit_Afterperiod_u}"></Label>
+                                    </Grid>
+                                    <Grid Background="White" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160*"></ColumnDefinition>
+                                            <ColumnDefinition Width="90*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Style="{StaticResource Label_Block}" ContentStringFormat="Стоимость изменений:"></Label>
+                                        <Label Grid.Column="1" Style="{StaticResource Content_Block}" ContentStringFormat="{Binding FlexibilityGraphic.CurrentScript.PriceOfChange_u}"></Label>
+                                    </Grid>
+                                </StackPanel>
+                            </ScrollViewer>
+
+
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="0.9*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" ContentStringFormat="ЭЛАСТИЧНОСТЬ" Template="{StaticResource TableTitle}"></Label>
+                            <DataGrid Grid.Row="1" Style="{StaticResource GridStyle_HighHeader}" ItemsSource="{Binding FlexibilityGraphic.CurrentScript.ProductScripts, UpdateSourceTrigger=PropertyChanged}">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn MinWidth="130" Width="0.3*" >
+                                        <DataGridTemplateColumn.Header>
+                                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Left_Multiline}" Content="НАИМЕНОВАНИЕ"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ContentPresenter ContentTemplate="{StaticResource DataGridCell_UnEditable_Left}" Content="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn MinWidth="100" Width="0.15*">
+                                        <DataGridTemplateColumn.Header>
+                                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="ИЗМЕНЕНИЕ&#10;ПРОДАЖ"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ContentPresenter Content="{Binding Amount_u, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Right}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn MinWidth="100" Width="0.15*">
+                                        <DataGridTemplateColumn.Header>
+                                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="ИЗМЕНЕНИЕ&#10;ВЫРУЧКИ"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ContentPresenter Content="{Binding Proceed_u, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Right}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn x:Name="lastColumn" MinWidth="100" Width="0.15*">
+                                        <DataGridTemplateColumn.Header>
+                                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="ИЗМЕНЕНИЕ&#10;ЗАТРАТ"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ContentPresenter Content="{Binding Exceed_u, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Right}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn x:Name="ResultColumn2" MinWidth="100" Width="0.15*">
+                                        <DataGridTemplateColumn.Header>
+                                            <DataGridColumnHeader Template="{StaticResource GridHeaderTemplate_Common_Multiline}"  Content="ИЗМЕНЕНИЕ&#10;ПРИБЫЛИ"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ContentPresenter Content="{Binding Profit_u, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" ContentTemplate="{StaticResource DataGridCell_UnEditable_Right}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal">
+                                <Button MaxWidth="150" Click="Button_Click_1" Width="{Binding ActualWidth, ElementName=lastColumn}" Margin="0 0 1 0" ContentStringFormat="Вернуться" Template="{StaticResource TableButton_Center_Gray}"></Button>
+                                <Button MaxWidth="150" Click="Button_Click_2" Command="{Binding SaveFlexibilityCommand}"  Width="{Binding ActualWidth, ElementName=ResultColumn2}" Margin="1 0 6 0" ContentStringFormat="Принять изменения" Template="{StaticResource TableButton_Center_Orange_Nobold}"></Button>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
